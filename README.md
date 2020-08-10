@@ -61,7 +61,12 @@ Register Page
 
 ## Functionality (to do now)
 The app's functionality includes:
-* (Example) Every User has the ability to create an account
+* Every User has the ability to create an account
+* Every User has the ability to login into the account
+* Every User has the ability to search for diet recipes
+* Every User has the ability to save recipes in the account
+* Every User has the ability to layout recipes on weekly calendar 
+
 
 ## Technology (done)
 * Front-End: HTML5, CSS3, JavaScript ES6, React
@@ -88,7 +93,7 @@ The app's functionality includes:
 API Documentation details:
 * (Example) get all users
 
-## Responsive
+## Responsive (done)
 App is built to be usable on mobile devices, as well as responsive across mobile, tablet, laptop, and desktop screen resolutions.
 
 ## Development Roadmap (to do later)
