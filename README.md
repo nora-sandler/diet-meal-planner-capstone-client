@@ -13,6 +13,16 @@ This app is for two types of users: a visitor and a logged-in user
 * I want to understand what I can do with this app (or sign up, or log in)
 * so I can decide if I want to use it
 
+### How it works page
+* As a visitor
+* I want to understand what I can do with this app (or sign up, or log in)
+* so I can decide if I want to use it
+
+### Blog page?????
+* As a visitor
+* I want to understand what I can do with this app (or sign up, or log in)
+* so I can decide if I want to use it
+
 ### Login page
 * As a visitor 
 * I want to log in to the website 
@@ -28,15 +38,17 @@ This app is for two types of users: a visitor and a logged-in user
 * I want to find the diet I am following and see what recipes are available and their details (not the whole list which is available for registered users).
 * So I can decide if I want to register.
 
-### User dashboard page
-* As a registered user
-* I want to see the list of recipes and their ingredients 
-* So that I can include them in my meal plan.
 
 ### Add recipe page
 * As a registered user
-* I want to find the diet I am following and see what recipes are available and their details.
+* I want to find the recipes available in accordance with my diet plan  and their details.
 * So I can save them in my account.
+
+### Recipe details page
+* As a registered user
+* I want to see details of the recipe including cooking process, necessary ingredients and equipment.
+* So I can save them in my account.
+
 
 ### User calendar page
 * As a registered user
@@ -48,9 +60,32 @@ This app is for two types of users: a visitor and a logged-in user
 ### Wireframes (to do now)
 (Example) Landing Page
 :-------------------------:
-![Landing Page](/github-images/wireframes/landing-page-wireframe.png)
-Register Page
-![Register Page](/github-images/wireframes/register-page-wireframe.png)
+![Landing Page](/github-images/wireframes/landing_page.jpg)
+Sign up Page 
+![Register Page](/github-images/wireframes/sign_up_page.jpg)
+Login Page
+![Login Page](/github-images/wireframes/sign_up_page.jpg)
+How it works 1 Page
+![How it works 1 Page](/github-images/wireframes/how_it_works_1.jpg)
+How it works 2 Page
+![How it works 2 Page](/github-images/wireframes/how_it_works_2.jpg)
+How it works  3 Page
+![How it works page 3 Page](/github-images/wireframes/how_it_works_3.jpg)
+How it works  4 Page
+![How it works  4 Page](/github-images/wireframes/how_it_works_4.jpg)
+Add recipes Page 
+![Add recipes Page](/github-images/wireframes/add_recipes_page.jpg)
+Recipe_details Page
+![Recipe_details Page](/github-images/wireframes/recipe_detail_page.jpg)
+Weekly calendar Page
+![Weekly calendar Page](/github-images/wireframes/weekly_calendar_page.jpg)
+
+
+
+
+
+
+
 
 ## Screenshots (to do later)
 (Example) Landing Page
