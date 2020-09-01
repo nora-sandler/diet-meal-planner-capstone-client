@@ -8,17 +8,12 @@ For people who are following diets restrictions and need new ideas on recipes.
 ## User Stories (to do now)
 This app is for two types of users: a visitor and a logged-in user
 
-#### (Example) Landing Page
+#### Landing Page
 * As a visitor
 * I want to understand what I can do with this app (or sign up, or log in)
 * so I can decide if I want to use it
 
 ### How it works page
-* As a visitor
-* I want to understand what I can do with this app (or sign up, or log in)
-* so I can decide if I want to use it
-
-### Blog page?????
 * As a visitor
 * I want to understand what I can do with this app (or sign up, or log in)
 * so I can decide if I want to use it
@@ -37,7 +32,6 @@ This app is for two types of users: a visitor and a logged-in user
 * As a visitor 
 * I want to find the diet I am following and see what recipes are available and their details (not the whole list which is available for registered users).
 * So I can decide if I want to register.
-
 
 ### Add recipe page
 * As a registered user
@@ -113,9 +107,29 @@ The app's functionality includes:
 * (Example) __Index.js__ (stateless)
     * __App.js__ (stateful)
         * __LandingPage.js__ (stateful) - gets the _"prop name"_ and the _"callback prop name"_ from the __App.js__
+            * __Navbar.js__ (stateless) -
             * __Login.js__ (stateful) -
             * __Register.js__ (stateful) -
-        * __Navbar.js__ (stateless) -
+            * __Footer.js__ (stateless) -
+        * __HowItWorks.js__ (stateless) -
+            * __Navbar.js__ (stateless) -
+            * __Footer.js__ (stateless) -
+        * __listOfDiets.js__(stateful) -
+            * __Navbar.js__ (stateless) -
+            * __Footer.js__ (stateless) -
+        * __addRecipesPage.js__(stateful) -
+            * __Navbar.js__ (stateless) -
+            * __Footer.js__ (stateless) -
+        * __recipesDetailsPage.js__(stateful) -
+            * __Navbar.js__ (stateless) -
+            * __Footer.js__ (stateless) -
+        * __weeklyCalendarPage.js__(stateless) -
+            * __Navbar.js__ (stateless) -
+            * __Footer.js__ (stateless) -
+
+        
+        
+
 
 ## Back-end Structure - Business Objects (to do later)
 * (Example) Users (database table)
