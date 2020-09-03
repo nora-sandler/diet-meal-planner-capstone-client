@@ -28,8 +28,13 @@ This app is for two types of users: a visitor and a logged-in user
 * I want to register to the web site 
 * So that I can use it.
 
+### Login page
+* As a registered user 
+* I want to login to the web site 
+* So that I can use it.
+
 ### Search diet page 
-* As a visitor 
+* As a registered user 
 * I want to find the diet I am following and see what recipes are available and their details (not the whole list which is available for registered users).
 * So I can decide if I want to register.
 

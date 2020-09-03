@@ -85,7 +85,7 @@ class Register extends React.Component {
         //     this.setState({submitButtonDisabled: ''});
         // }
     }
-    handleSubmit = (event) => {
+    registerUser = (event) => {
       event.preventDefault();
         //get the input from the form submission
         const data = {};
