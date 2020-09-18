@@ -122,7 +122,7 @@ The app's functionality includes:
         * __listOfDiets.js__(stateful) -
             * __Navbar.js__ (stateless) -
             * __Footer.js__ (stateless) -
-        * __addRecipesPage.js__(stateful) -
+        * __AddRecipesPage.js__(stateful) -
             * __Navbar.js__ (stateless) -
             * __Footer.js__ (stateless) -
         * __recipesDetailsPage.js__(stateful) -
@@ -137,10 +137,26 @@ The app's functionality includes:
 
 
 ## Back-end Structure - Business Objects (to do later)
-* (Example) Users (database table)
+* Users (database table)
     * id (auto-generated)
     * username (email validation)
     * password (at least 8 chars, at least one alpha and a special character validation)
+
+* Recipes (database table)
+    * id (auto-generated)
+    <!-- * diet_name (varchar 255) -->
+    * recipe_name (varchar 255)
+    * recipe_img 
+
+* Recipe_Detail (database table)  
+    * id (auto-generated)
+    * diet_name (varchar 255)
+    * recipe_name (varchar 255)
+    * recipe_img 
+    * recipe_ingredients (varchar 255)
+    * nutrition_info (varchar 255)
+    * recipe_equipment (varchar 255) 
+    * recipe_instruction (varchar 255)
 
 
 ## API Documentation (to do later)
