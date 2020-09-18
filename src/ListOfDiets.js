@@ -4,13 +4,14 @@ import TokenService from "./services/token-service.js";
 import config from "./config";
 
 class ListOfDiets extends React.Component {
-    constructor(props) {
+  constructor(props) {
         super(props);
         this.state = {
           dietsByUserId: [],
           diets:[]
          };
       }
+
     
       componentDidMount(){
         
