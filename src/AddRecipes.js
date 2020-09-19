@@ -8,7 +8,9 @@ class AddRecipes extends React.Component {
         super(props);
         this.state = {
             recipes: [],
+            recipesFound:[],
             params: {},
+
         };
     }
 
@@ -17,7 +19,7 @@ class AddRecipes extends React.Component {
         let url = `${config.API_ENDPOINT}/diets/list/${dietListId}`;
         let url1 = `${config.API_ENDPOINT}/recipes/list/${dietListId}`;
 
-        fetch(url)
+        fetch(url1)
             .then((response) => response.json())
 
             .then((data) => {
@@ -50,28 +52,28 @@ class AddRecipes extends React.Component {
             .then((data) => {
                 console.log(data);
 
-                let recipesList = data.items.map((data, key) => {
-                    let imgOutput =
-                        "https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.uh.edu%2Fpharmacy%2F_images%2Fdirectory-staff%2Fno-image-available.jpg&f=1&nofb=1";
+                // let recipesList = data.items.map((data, key) => {
+                //     let imgOutput =
+                //         "https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.uh.edu%2Fpharmacy%2F_images%2Fdirectory-staff%2Fno-image-available.jpg&f=1&nofb=1";
 
-                    if (data.volumeInfo.hasOwnProperty("imageLinks")) {
-                        console.log(data.volumeInfo.imageLinks.smallThumbnail);
-                        imgOutput = data.volumeInfo.imageLinks.smallThumbnail;
-                    }
+                //     if (data.volumeInfo.hasOwnProperty("imageLinks")) {
+                //         console.log(data.volumeInfo.imageLinks.smallThumbnail);
+                //         imgOutput = data.volumeInfo.imageLinks.smallThumbnail;
+                //     }
 
-                    // console.log(data.volumeInfo.categories)
-                    let outPutObject = {
-                        name: checkString(data.volumeInfo.title),
-                        spoonacular_id : checkString......,
-                        img: imgOutput,
-                    };
-                    // console.log(outPutObject)
-                    return outPutObject;
-                });
+                //     // console.log(data.volumeInfo.categories)
+                //     let outPutObject = {
+                //         name: checkString(data.volumeInfo.title),
+                //         spoonacular_id : checkString......,
+                //         img: imgOutput,
+                //     };
+                //     // console.log(outPutObject)
+                //     return outPutObject;
+                // });
 
-                this.setState({
-                    recipesFound: recipesList,
-                });
+                // this.setState({
+                //     recipesFound: recipesList,
+                // });
                 // console.log(this.state)
             })
 
@@ -80,108 +82,106 @@ class AddRecipes extends React.Component {
             });
     };
 
-    addRecipeFromApi(e) {
-        // console.log('hello there')
-        e.preventDefault();
-        // if an integer is empty, undefinded or null, default it to 0
-        function checkInteger(inputInteger) {
-            let outputValue = inputInteger;
-            if (inputInteger === "") {
-                outputValue = 0;
-            }
-            if (inputInteger === undefined) {
-                outputValue = 0;
-            }
-            if (inputInteger == null) {
-                outputValue = 0;
-            }
-            return outputValue;
-        }
+    // addRecipeFromApi(e) {
+    //     // console.log('hello there')
+    //     e.preventDefault();
+    //     // if an integer is empty, undefinded or null, default it to 0
+    //     function checkInteger(inputInteger) {
+    //         let outputValue = inputInteger;
+    //         if (inputInteger === "") {
+    //             outputValue = 0;
+    //         }
+    //         if (inputInteger === undefined) {
+    //             outputValue = 0;
+    //         }
+    //         if (inputInteger == null) {
+    //             outputValue = 0;
+    //         }
+    //         return outputValue;
+    //     }
 
-        // if a string is undefinded or null, default it to "no details"
-        function checkString(inputString) {
-            let outputText = inputString;
-            if (inputString === undefined) {
-                outputText = "no details";
-            }
-            if (inputString == null) {
-                outputText = "no details";
-            }
-            return outputText;
-        }
+    //     // if a string is undefinded or null, default it to "no details"
+    //     function checkString(inputString) {
+    //         let outputText = inputString;
+    //         if (inputString === undefined) {
+    //             outputText = "no details";
+    //         }
+    //         if (inputString == null) {
+    //             outputText = "no details";
+    //         }
+    //         return outputText;
+    //     }
 
-        // if a URL is undefinded or null, default it to the root url "/"
-        function checkURL(inputURL) {
-            let outputURL = inputURL;
-            if (inputURL === undefined) {
-                outputURL = "/";
-            }
-            if (inputURL == null) {
-                outputURL = "/";
-            }
-            return outputURL;
-        }
+    //     // if a URL is undefinded or null, default it to the root url "/"
+    //     function checkURL(inputURL) {
+    //         let outputURL = inputURL;
+    //         if (inputURL === undefined) {
+    //             outputURL = "/";
+    //         }
+    //         if (inputURL == null) {
+    //             outputURL = "/";
+    //         }
+    //         return outputURL;
+    //     }
 
-        // if a URL is undefinded or null, default it to the root url "/"
-        function checkEmptyImage(inputURL) {
-            let outputURL = inputURL;
-            if (inputURL === undefined) {
-                outputURL =
-                    "https://legacytaylorsville.com/wp-content/uploads/2015/07/No-Image-Available1.png";
-            }
-            if (inputURL == null) {
-                outputURL =
-                    "https://legacytaylorsville.com/wp-content/uploads/2015/07/No-Image-Available1.png";
-            }
-            return outputURL;
-        }
+    //     // if a URL is undefinded or null, default it to the root url "/"
+    //     function checkEmptyImage(inputURL) {
+    //         let outputURL = inputURL;
+    //         if (inputURL === undefined) {
+    //             outputURL =
+    //                 "https://legacytaylorsville.com/wp-content/uploads/2015/07/No-Image-Available1.png";
+    //         }
+    //         if (inputURL == null) {
+    //             outputURL =
+    //                 "https://legacytaylorsville.com/wp-content/uploads/2015/07/No-Image-Available1.png";
+    //         }
+    //         return outputURL;
+    //     }
 
-        //create an object to store the search filters
-        const data = {};
+    //     //create an object to store the search filters
+    //     const data = {};
 
-        //get all the form data from the form component
-        const formData = new FormData(e.target);
+    //     //get all the form data from the form component
+    //     const formData = new FormData(e.target);
 
-        console.log(formData);
-        //for each of the keys in form data populate it with form value
-        for (let value of formData) {
-            data[value[0]] = value[1];
-        }
+    //     console.log(formData);
+    //     //for each of the keys in form data populate it with form value
+    //     for (let value of formData) {
+    //         data[value[0]] = value[1];
+    //     }
 
-        //assigning the object from the form data to params in the state
-        this.setState({
-            params: data
-        })
+    //     //assigning the object from the form data to params in the state
+    //     this.setState({
+    //         params: data
+    //     })
 
-        //check if the state is populated with the search params data
-        console.log(data);
+    //     //check if the state is populated with the search params data
+    //     console.log(data);
 
-        let payload = {
-            user_id: data.user_id,
-            spoonacular_id: 0,
-            name : checkString(data.name),
-            author: checkString(data.author),
-            genre: checkString(data.genre),
-            img: checkString(data.img),
-        };
+    //     let payload = {
+    //         user_id: data.user_id,
+    //         spoonacular_id: 0,
+    //         name : checkString(data.name),
+    //         img: checkString(data.img),
+    //     };
 
-        console.log(payload);
+    //     console.log(payload);
 
-        fetch(`${config.API_ENDPOINT}/recipes/collection/${data.collection_id}`, {
-            method: "POST",
-            headers: {
-                "content-type": "application/json",
-            },
-            body: JSON.stringify(payload),
-        })
-            .then((response) => {
-                // console.log("response", response)
-                window.location = `/recipe/add/${data.collection_id}`;
-            })
-            .catch((err) => {
-                console.log(err);
-            });
-    }
+    //     fetch(`${config.API_ENDPOINT}/recipes/collection/${data.collection_id}`, {
+    //         method: "POST",
+    //         headers: {
+    //             "content-type": "application/json",
+    //         },
+    //         body: JSON.stringify(payload),
+    //     })
+    //         .then((response) => {
+    //             // console.log("response", response)
+    //             window.location = `/recipe/add/${data.collection_id}`;
+    //         })
+    //         .catch((err) => {
+    //             console.log(err);
+    //         });
+    // }
 
     render() {
         return (

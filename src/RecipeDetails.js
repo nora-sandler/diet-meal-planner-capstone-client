@@ -1,33 +1,33 @@
 import React from "react";
 import Header from "./Header";
+import config from "./config";
 
 class RecipeDetails extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             recipe: [],
-            collectionId: 0,
         };
     }
-    // //componentDidMount() {
-    //     const recipeId = this.props.match.params.recipeId;
+    componentDidMount() {
+        const recipeId = this.props.match.params.recipeId;
 
-    //     let getByRecipeId = `${config.API_ENDPOINT}/diets/recipe/${recipeId}`;
+        let getByRecipeId = `${config.API_ENDPOINT}/diets/recipe/${recipeId}`;
 
-    //     fetch(getByRecipeId)
-    //         .then((response) => response.json())
-    //         .then((data) => {
-    //             console.log("success:", data);
-    //             this.setState({
-    //                 recipe: data,
-    //                 recipeListId: data[0].collection_id,
-    //             });
-    //         })
-    //         .catch((err) => {
-    //             console.log(err);
-    //         });
-    // }
-    submitComment(event) {
+        fetch(getByRecipeId)
+            .then((response) => response.json())
+            .then((data) => {
+                console.log("success:", data);
+                this.setState({
+                    recipe: data,
+                    recipeListId: data[0].collection_id,
+                });
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+    }
+    addRecipeComment(event) {
         event.preventDefault();
         console.log("Submit clicked");
         const data = {};

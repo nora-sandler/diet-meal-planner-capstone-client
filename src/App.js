@@ -13,12 +13,12 @@ class App extends React.Component {
     return (
       <div className="App">
         
-        <Landing/>
-        <HowItWorks/>
+        {/* <Landing/> */}
+        {/* <HowItWorks/> */}
         <ListOfDiets/>
-        <AddRecipes/>
-        <RecipeDetails/>
-        <WeeklyCalendar/>
+        {/* <AddRecipes/> */}
+        {/* <RecipeDetails/> */}
+        {/* <WeeklyCalendar/> */}
         
 
       </div>
