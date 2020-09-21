@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from "react-dom"
 import './App.css';
 import Landing from './Landing'
-import AddRecipes from './AddRecipes';
+// import AddRecipes from './AddRecipes';
 import HowItWorks from './HowItWorks';
 import ListOfDiets from './ListOfDiets';
 import RecipeDetails from './RecipeDetails'

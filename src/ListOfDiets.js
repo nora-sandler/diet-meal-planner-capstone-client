@@ -9,10 +9,12 @@ class ListOfDiets extends React.Component {
         this.state = {
             dietsByUserId: [],
             diets: [],
+            recipesByUserId:[]
         };
     }
 
     componentDidMount() {
+        this.showUsersRecipesByDiet()
         //let currentUser = TokenService.getUserId();
         let currentUser = 1;
 
@@ -25,6 +27,25 @@ class ListOfDiets extends React.Component {
                     dietsByUserId: dietsInList,
                 });
                 console.log(this.state);
+            })
+
+            .catch((error) => this.setState({ error }));
+        console.log("Stateful component Dashboard successfully mounted.");
+    }
+    
+    showUsersRecipesByDiet() {
+        //let currentUser = TokenService.getUserId();
+        let currentUser = 1;
+
+        let getRecipesByUserId = `${config.API_ENDPOINT}/recipes/recipes-by-user-id/${currentUser}`;
+
+        fetch(getRecipesByUserId)
+            .then((recipesInList) => recipesInList.json())
+            .then((recipesInList) => {
+                this.setState({
+                    recipesByUserId: recipesInList,
+                });
+                
             })
 
             .catch((error) => this.setState({ error }));
@@ -66,12 +87,26 @@ class ListOfDiets extends React.Component {
     }
 
     render() {
+        // let existingRecipes = this.showUsersRecipesByDiet('keto')
+        // console.log(existingRecipes)
+        let existingRecipes = this.state.recipesByUserId.map(recipe => {
+                return(
+                    <li>
+                      ??????  {recipe.diet_name}????????
+                    </li>
+                )
+        })
         let diet = "diet text";
         let dietInfo = "diet info text";
         const existingDiets = this.state.dietsByUserId.map((diet, key) => {
                 return ( <ul>
                         <li>
-                            <h3>Gluten Free (3) {diet.diet_name}</h3>
+                            {(diet.diet_name == "gluten") ?  
+                            <h3 className = 'selectedDiet' > Gluten Free</h3>
+                            : 
+                            <h3> Gluten Free</h3>
+                            }
+
                             <p>
                                 Eliminating gluten means avoiding wheat, barley,
                                 rye, and other gluten-containing grains and
@@ -101,7 +136,12 @@ class ListOfDiets extends React.Component {
                             </form>
                         </li>
                         <li>
-                            <h3>Ketogenic (0)</h3>
+                        {(diet.diet_name == "keto") ?  
+                            <h3 className = 'selectedDiet' > Ketogenic (0)</h3>
+                            : 
+                            <h3> Ketogenic (0)</h3>
+                            }
+
                             <p>
                                 The keto diet is based more on the ratio of fat,
                                 protein, and carbs in the diet rather than
@@ -109,6 +149,13 @@ class ListOfDiets extends React.Component {
                                 fat, protein-rich foods are acceptable and high
                                 carbohydrate foods are not.
                             </p>
+
+                            {(diet.diet_name == "keto") ?  
+                                <ul>{existingRecipes}</ul>
+                                :
+                                <div> </div>
+                            }
+
                             <form
                                 className="dietForm"
                                 onSubmit={this.deleteDiet}
@@ -132,7 +179,11 @@ class ListOfDiets extends React.Component {
                             </form>
                         </li>
                         <li>
-                            <h3>Vegetarian (0)</h3>
+                        {(diet.diet_name == "vegetarian") ?  
+                            <h3 className = 'selectedDiet' > Vegetarian</h3>
+                            : 
+                            <h3> Vegetarian</h3>
+                            }
                             <p>
                                 No ingredients may contain meat or meat
                                 by-products, such as bones or gelatin.
@@ -160,7 +211,12 @@ class ListOfDiets extends React.Component {
                             </form>
                         </li>
                         <li>
-                            <h3>Lacto-Vegetarian (0)</h3>
+                        {(diet.diet_name == "lacto-Vegetarian") ?  
+                            <h3 className = 'selectedDiet' > Lacto-Vegetarian</h3>
+                            : 
+                            <h3> Lacto-Vegetarian</h3>
+                            }
+                            
                             <p>
                                 All ingredients must be vegetarian and none of
                                 the ingredients can be or contain egg.
@@ -188,7 +244,12 @@ class ListOfDiets extends React.Component {
                             </form>
                         </li>
                         <li>
-                            <h3>Ovo-Vegetarian (0)</h3>
+                            {(diet.diet_name == "ovo-vegetarian") ?  
+                            <h3 className = 'selectedDiet' > Ovo-Vegetarian</h3>
+                            : 
+                            <h3> Ovo-Vegetarian</h3>
+                            }
+
                             <p>
                                 All ingredients must be vegetarian and none of
                                 the ingredients can be or contain dairy.
@@ -216,7 +277,12 @@ class ListOfDiets extends React.Component {
                             </form>
                         </li>
                         <li>
-                            <h3>Vegan (0)</h3>
+
+                            {(diet.diet_name == "vegan") ?  
+                            <h3 className = 'selectedDiet' > Vegan</h3>
+                            : 
+                            <h3> Vegan</h3>
+                            }
                             <p>
                                 No ingredients may contain meat or meat
                                 by-products, such as bones or gelatin, nor may
@@ -245,7 +311,13 @@ class ListOfDiets extends React.Component {
                             </form>
                         </li>
                         <li>
-                            <h3>Pescetarian (0)</h3>
+    
+                            {(diet.diet_name == "pescetarian") ?  
+                            <h3 className = 'selectedDiet' > Pescetarian</h3>
+                            : 
+                            <h3> Pescetarian</h3>
+                            }
+
                             <p>
                                 Everything is allowed except meat and meat
                                 by-products - some pescetarians eat eggs and
@@ -274,7 +346,12 @@ class ListOfDiets extends React.Component {
                             </form>
                         </li>
                         <li>
-                            <h3>Paleo (0)</h3>
+
+                            {(diet.diet_name == "paleo") ?  
+                            <h3 className = 'selectedDiet' > Paleo</h3>
+                            : 
+                            <h3> Paleo</h3>
+                            }
                             <p>
                                 Allowed ingredients include meat (especially
                                 grass fed), fish, eggs, vegetables, some oils
@@ -309,7 +386,12 @@ class ListOfDiets extends React.Component {
                             </form>
                         </li>
                         <li>
-                            <h3>Primal (0)</h3>
+
+                            {(diet.diet_name == "primal") ?  
+                            <h3 className = 'selectedDiet' > Primal</h3>
+                            : 
+                            <h3> Primal</h3>
+                            }
                             <p>
                                 Very similar to Paleo, except dairy is allowed -
                                 think raw and full fat milk, butter, ghee, etc.
@@ -337,7 +419,11 @@ class ListOfDiets extends React.Component {
                             </form>
                         </li>
                         <li>
-                            <h3>Whole30 (0)</h3>
+                            {(diet.diet_name == "whole30") ?  
+                            <h3 className = 'selectedDiet' > Whole30</h3>
+                            : 
+                            <h3> Whole30</h3>
+                            }
                             <p>
                                 Allowed ingredients include meat, fish/seafood,
                                 eggs, vegetables, fresh fruit, coconut oil,

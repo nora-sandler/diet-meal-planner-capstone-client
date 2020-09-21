@@ -7,7 +7,6 @@ class AddRecipes extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            recipes: [],
             recipesFound:[],
             params: {},
 
@@ -15,9 +14,10 @@ class AddRecipes extends React.Component {
     }
 
     componentDidMount() {
-        const dietListId = this.props.match.params.dietListId;
-        let url = `${config.API_ENDPOINT}/diets/list/${dietListId}`;
-        let url1 = `${config.API_ENDPOINT}/recipes/list/${dietListId}`;
+       // const dietListId = this.props.match.params.dietListId;
+        // let url = `${config.API_ENDPOINT}/diets/list/${dietListId}`;
+        let url1 = `${config.API_ENDPOINT}recipe-by-diet-api-data/{this.dietListId}`;
+
 
         fetch(url1)
             .then((response) => response.json())
@@ -31,7 +31,7 @@ class AddRecipes extends React.Component {
                 // let recipeDetails = data
 
                 this.setState({
-                    recipes: data,
+                    recipesFound: data,
                 });
             })
 
@@ -46,35 +46,22 @@ class AddRecipes extends React.Component {
         event.preventDefault();
 
         fetch(
-            `https://api.spoonacular.com/recipes/?q=${this.state.search}&apiKey=6a8f8872dfcd40a3801e7a331e543a53&diet=keto`
+            `https://api.spoonacular.com/recipes/?q=${this.state.recipes}&apiKey=6a8f8872dfcd40a3801e7a331e543a53&diet=keto`
         )
             .then((response) => response.json())
             .then((data) => {
                 console.log(data);
 
-                // let recipesList = data.items.map((data, key) => {
-                //     let imgOutput =
-                //         "https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.uh.edu%2Fpharmacy%2F_images%2Fdirectory-staff%2Fno-image-available.jpg&f=1&nofb=1";
+            // let recipesList = data.items.map((data, key) => {
+            //         name:,
+            //         spoonacular_id :,
+            //         img:
+            // }
 
-                //     if (data.volumeInfo.hasOwnProperty("imageLinks")) {
-                //         console.log(data.volumeInfo.imageLinks.smallThumbnail);
-                //         imgOutput = data.volumeInfo.imageLinks.smallThumbnail;
-                //     }
-
-                //     // console.log(data.volumeInfo.categories)
-                //     let outPutObject = {
-                //         name: checkString(data.volumeInfo.title),
-                //         spoonacular_id : checkString......,
-                //         img: imgOutput,
-                //     };
-                //     // console.log(outPutObject)
-                //     return outPutObject;
-                // });
-
-                // this.setState({
-                //     recipesFound: recipesList,
-                // });
-                // console.log(this.state)
+                this.setState({
+                    recipesFound: recipesList,
+                });
+                console.log(this.state)
             })
 
             .catch((err) => {
@@ -197,11 +184,11 @@ class AddRecipes extends React.Component {
                         <h2>List of recipes</h2>
                         <ul>
                             <li>
-                                <a href="#">
+                                <a href= `${recipesFound}`>
                                     Recipe 1
                                     <img
                                         alt="Recipe1Img"
-                                        src="img.jpg"
+                                        src=`${recipesList.img}`
                                         alt="alt-image"
                                     />
                                 </a>

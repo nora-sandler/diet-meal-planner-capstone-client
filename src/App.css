@@ -96,6 +96,10 @@ Header styles (Main Module)
 Content styles (Main Module)
 (all the styles inside the < sections > or < aside > tags)
 */
+.selectedDiet {
+  color: red;
+}
+
 /* Table styles */
 div.weekly-meal-calendar {
   font-family: Tahoma, Geneva, sans-serif;
