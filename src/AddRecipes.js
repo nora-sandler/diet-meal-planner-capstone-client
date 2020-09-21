@@ -7,32 +7,27 @@ class AddRecipes extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            recipesFound:[],
+            recipesFound: [],
             params: {},
 
         };
     }
 
     componentDidMount() {
-       // const dietListId = this.props.match.params.dietListId;
-        // let url = `${config.API_ENDPOINT}/diets/list/${dietListId}`;
-        let url1 = `${config.API_ENDPOINT}recipe-by-diet-api-data/{this.dietListId}`;
+        const dietName = this.props.match.params.dietName;
+        let url = `${config.API_ENDPOINT}/recipe-by-diet-api-data/${dietName}`;
+        console.log(url)
 
 
-        fetch(url1)
+        fetch(url)
             .then((response) => response.json())
 
             .then((data) => {
-                // console.log('success:', data)
-                // console.log(data)
-
-                // let outPutObject = [];
-
-                // let recipeDetails = data
-
+                console.log(data)
                 this.setState({
-                    recipesFound: data,
+                    recipesFound: data.results
                 });
+                console.log(this.state)
             })
 
             .catch((err) => {
@@ -52,15 +47,15 @@ class AddRecipes extends React.Component {
             .then((data) => {
                 console.log(data);
 
-            // let recipesList = data.items.map((data, key) => {
-            //         name:,
-            //         spoonacular_id :,
-            //         img:
-            // }
+                // let recipesList = data.items.map((data, key) => {
+                //         name:,
+                //         spoonacular_id :,
+                //         img:
+                // }
 
-                this.setState({
-                    recipesFound: recipesList,
-                });
+                // this.setState({
+                //     recipesFound: recipesList,
+                // });
                 console.log(this.state)
             })
 
@@ -171,6 +166,20 @@ class AddRecipes extends React.Component {
     // }
 
     render() {
+        let foundRecipes = this.state.recipesFound.map(recipe => {
+            return(
+                <li>
+                <a href="#">
+                    {recipe.title}
+                    <img
+                        alt="Recipe1Img"
+                        src="img.jpg"
+                        alt="alt-image"
+                    />
+                </a>
+            </li>
+            )
+    })
         return (
             <div className="AddRecipes">
                 <Header />
@@ -183,36 +192,7 @@ class AddRecipes extends React.Component {
                         </p>
                         <h2>List of recipes</h2>
                         <ul>
-                            <li>
-                                <a href= `${recipesFound}`>
-                                    Recipe 1
-                                    <img
-                                        alt="Recipe1Img"
-                                        src=`${recipesList.img}`
-                                        alt="alt-image"
-                                    />
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    Recipe 2
-                                    <img
-                                        alt="Recipe2Img"
-                                        src="img.jpg"
-                                        alt="alt-image"
-                                    />
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    Recipe 3
-                                    <img
-                                        alt="Recipe3Img"
-                                        src="img.jpg"
-                                        alt="alt-image"
-                                    />
-                                </a>
-                            </li>
+                            {foundRecipes}
                         </ul>
                         <button type="submit">Next</button>
                     </div>
