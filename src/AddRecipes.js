@@ -167,14 +167,24 @@ class AddRecipes extends React.Component {
 
     render() {
         let foundRecipes = this.state.recipesFound.map(recipe => {
+            let imgUrl = `https://spoonacular.com/recipeImages/${recipe.image}`
             return(
                 <li>
-                <a href="#">
+                <a href= {recipe.sourceUrl} target = '_blank'>
+                    <h3>
                     {recipe.title}
+                    </h3>
+                    <p>
+                        Cooking time: {recipe.readyInMinutes}
+                    </p>
+                    <p>
+                        Servings: {recipe.servings}
+                    </p>
+                        
                     <img
-                        alt="Recipe1Img"
-                        src="img.jpg"
-                        alt="alt-image"
+                        className = 'recipeImage'
+                        src={imgUrl}
+                        alt="img" 
                     />
                 </a>
             </li>

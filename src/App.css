@@ -100,6 +100,9 @@ Content styles (Main Module)
   color: red;
 }
 
+.recipeImage{
+  width: 100%;
+}
 /* Table styles */
 div.weekly-meal-calendar {
   font-family: Tahoma, Geneva, sans-serif;
