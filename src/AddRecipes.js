@@ -65,7 +65,7 @@ class AddRecipes extends React.Component {
         
           console.log(payload)
         
-          fetch(`${config.API_ENDPOINT}/recipes/recipe/${recipe_id}`, { ////recipes/recipes-by-user-id//recipe-by-diet-api-data/keto
+          fetch(`${config.API_ENDPOINT}/recipes/recipe/${data.recipe_name}`, { ////recipes/recipes-by-user-id//recipe-by-diet-api-data/keto
               method: 'POST',
               headers: {
                 'content-type': 'application/json',
