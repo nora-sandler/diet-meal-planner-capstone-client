@@ -18,7 +18,6 @@ class AddRecipes extends React.Component {
         let url = `${config.API_ENDPOINT}/recipe-by-diet-api-data/${dietName}`;
         console.log(url)
 
-
         fetch(url)
             .then((response) => response.json())
 
@@ -37,33 +36,52 @@ class AddRecipes extends React.Component {
         console.log("Stateful component add recipe successfully mounted.");
     }
 
-    handleSubmit = (event) => {
-        event.preventDefault();
 
-        fetch(
-            `https://api.spoonacular.com/recipes/?q=${this.state.recipes}&apiKey=6a8f8872dfcd40a3801e7a331e543a53&diet=keto`
-        )
-            .then((response) => response.json())
-            .then((data) => {
-                console.log(data);
+    
+    addRecipe(event) {
+        
+        console.log('hello there')
 
-                // let recipesList = data.items.map((data, key) => {
-                //         name:,
-                //         spoonacular_id :,
-                //         img:
-                // }
+        event.preventDefault()
+    
 
-                // this.setState({
-                //     recipesFound: recipesList,
-                // });
-                console.log(this.state)
+        const data = {}
+    
+        const formData = new FormData(event.target)
+    
+        for (let value of formData) {
+            data[value[0]] = value[1]
+        }
+    
+        console.log("data")
+ 
+        let {spoonacular_id, recipe_name, recipe_img} = data;
+        console.log(spoonacular_id, recipe_name, recipe_img)
+        let payload = {
+            spoonacular_id:data.spoonacular_id,
+            recipe_name: data.recipe_name,
+            recipe_img:data.img
+          }
+        
+          console.log(payload)
+        
+          fetch(`${config.API_ENDPOINT}/recipes/recipe/${recipe_id}`, { ////recipes/recipes-by-user-id//recipe-by-diet-api-data/keto
+              method: 'POST',
+              headers: {
+                'content-type': 'application/json',
+              },
+              body: JSON.stringify(payload),
             })
-
-            .catch((err) => {
-                console.log(err);
+        
+            .then(response => {
+              console.log("response", response)
+            //   window.location = `/book/add/${data.collection_id}` 
+            })
+            .catch(err => {
+              console.log(err);
             });
-    };
-
+    
+      }
     // addRecipeFromApi(e) {
     //     // console.log('hello there')
     //     e.preventDefault();
@@ -168,28 +186,36 @@ class AddRecipes extends React.Component {
     render() {
         let foundRecipes = this.state.recipesFound.map(recipe => {
             let imgUrl = `https://spoonacular.com/recipeImages/${recipe.image}`
-            return(
-                <li>
-                <a href= {recipe.sourceUrl} target = '_blank'>
-                    <h3>
-                    {recipe.title}
-                    </h3>
-                    <p>
-                        Cooking time: {recipe.readyInMinutes}
-                    </p>
-                    <p>
-                        Servings: {recipe.servings}
-                    </p>
-                        
-                    <img
-                        className = 'recipeImage'
-                        src={imgUrl}
-                        alt="img" 
-                    />
-                </a>
-            </li>
+            return (
+                <li key={recipe.id}>
+                    <a href={recipe.sourceUrl} target='_blank'>
+                        <h3>
+                            {recipe.title}
+                        </h3>
+                        <p>
+                            Cooking time: {recipe.readyInMinutes}
+                        </p>
+                        <p>
+                            Servings: {recipe.servings}
+                        </p>
+
+                        <img
+                            className='recipeImage'
+                            src={imgUrl}
+                            alt="img"
+                        />
+                    </a>
+                    <form className="addRecipeForm" onSubmit={this.addRecipe}>
+                        <input type='hidden' name='spoonacular_id' defaultValue={recipe.id}></input>
+                        <input type='hidden' name='recipe_name' defaultValue={recipe.title}></input>
+                        <input type='hidden' name='recipe_img' defaultValue={recipe.image}></input>
+                        <button type='submit' className='addRecipeBtn'>Add recipe</button>
+                    </form>
+
+                </li>
+
             )
-    })
+        })
         return (
             <div className="AddRecipes">
                 <Header />

@@ -32,7 +32,7 @@ class ListOfDiets extends React.Component {
             })
 
             .catch((error) => this.setState({ error }));
-        console.log("Stateful component Dashboard successfully mounted.");
+        console.log("Stateful component 1 Dashboard successfully mounted.");
     }
     
     showUsersRecipesByDiet() {
@@ -51,7 +51,7 @@ class ListOfDiets extends React.Component {
             })
 
             .catch((error) => this.setState({ error }));
-        console.log("Stateful component Dashboard successfully mounted.");
+        console.log("Stateful component 2 Dashboard successfully mounted.");
     }
 
     //     // handleSubmit(event) {
@@ -74,9 +74,7 @@ class ListOfDiets extends React.Component {
 
         let { dietId } = data;
         console.log(dietId);
-        const requestOptions = {
-            method: "DELETE",
-        };
+
 
         fetch(`${config.API_ENDPOINT}/diets/diet/${dietId}`, {
             method: "DELETE",
@@ -132,7 +130,7 @@ class ListOfDiets extends React.Component {
                                 <button type="submit" className="dietDeleteBtn">
                                     Delete Diet
                                 </button>
-                                <NavLink className ='s-button' to="/recipe/add/gluten">Show diets</NavLink>
+                                <NavLink className ='s-button' to="/recipe/add/gluten">Show recipes</NavLink>
                             </form>
                         </li>
                         <li>
@@ -173,7 +171,7 @@ class ListOfDiets extends React.Component {
                                 <button type="submit" className="dietDeleteBtn">
                                     Delete Diet
                                 </button>
-                                <NavLink className ='s-button' to="/recipe/add/keto">Show diets</NavLink>
+                                <NavLink className ='s-button' to="/recipe/add/keto">Show recipes</NavLink>
                             </form>
                         </li>
                         <li>
@@ -203,7 +201,7 @@ class ListOfDiets extends React.Component {
                                 <button type="submit" className="dietDeleteBtn">
                                     Delete Diet
                                 </button>
-                                <NavLink className ='s-button' to="/recipe/add/vegetarian">Show diets</NavLink>
+                                <NavLink className ='s-button' to="/recipe/add/vegetarian">Show recipes</NavLink>
                             </form>
                         </li>
                         <li>
@@ -234,7 +232,7 @@ class ListOfDiets extends React.Component {
                                 <button type="submit" className="dietDeleteBtn">
                                     Delete Diet
                                 </button>
-                                <NavLink className ='s-button' to="/recipe/add/lacto-vegetarian">Show diets</NavLink>
+                                <NavLink className ='s-button' to="/recipe/add/lacto-vegetarian">Show recipes</NavLink>
                             </form>
                         </li>
                         <li>
@@ -265,7 +263,7 @@ class ListOfDiets extends React.Component {
                                 <button type="submit" className="dietDeleteBtn">
                                     Delete Diet
                                 </button>
-                                <NavLink className ='s-button' to="/recipe/add/ovo-vegetarian">Show diets</NavLink>
+                                <NavLink className ='s-button' to="/recipe/add/ovo-vegetarian">Show recipes</NavLink>
                             </form>
                         </li>
                         <li>
@@ -297,7 +295,7 @@ class ListOfDiets extends React.Component {
                                 <button type="submit" className="dietDeleteBtn">
                                     Delete Diet
                                 </button>
-                                <NavLink className ='s-button' to="/recipe/add/vegan">Show diets</NavLink>
+                                <NavLink className ='s-button' to="/recipe/add/vegan">Show recipes</NavLink>
                             </form>
                         </li>
                         <li>
@@ -330,7 +328,7 @@ class ListOfDiets extends React.Component {
                                 <button type="submit" className="dietDeleteBtn">
                                     Delete Diet
                                 </button>
-                                <NavLink className ='s-button' to="/recipe/add/ovo-pescetarian">Show diets</NavLink>
+                                <NavLink className ='s-button' to="/recipe/add/ovo-pescetarian">Show recipes</NavLink>
                             </form>
                         </li>
                         <li>
@@ -368,7 +366,7 @@ class ListOfDiets extends React.Component {
                                 <button type="submit" className="dietDeleteBtn">
                                     Delete Diet
                                 </button>
-                                <NavLink className ='s-button' to="/recipe/add/paleo">Show diets</NavLink>
+                                <NavLink className ='s-button' to="/recipe/add/paleo">Show recipes</NavLink>
                             </form>
                         </li>
                         <li>
@@ -399,7 +397,7 @@ class ListOfDiets extends React.Component {
                                 <button type="submit" className="dietDeleteBtn">
                                     Delete Diet
                                 </button>
-                                <NavLink className ='s-button' to="/recipe/add/primal">Show diets</NavLink>
+                                <NavLink className ='s-button' to="/recipe/add/primal">Show recipes</NavLink>
                             </form>
                         </li>
                         <li>
@@ -437,7 +435,7 @@ class ListOfDiets extends React.Component {
                                 <button type="submit" className="dietDeleteBtn">
                                     Delete Diet
                                 </button>
-                                <NavLink className ='s-button' to="/recipe/add/whole30">Show diets</NavLink>
+                                <NavLink className ='s-button' to="/recipe/add/whole30">Show recipes</NavLink>
                             </form>
                         </li>
                     </ul>
