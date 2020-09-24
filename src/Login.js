@@ -70,7 +70,7 @@ class Login extends React.Component {
         const { userName, password } = event.target;
         console.log("username:", userName.value, "password:", password.value);
         AuthApiService.postLogin({
-            userName: userName.value,
+            user_name: userName.value,
             password: password.value,
         })
 
@@ -81,9 +81,6 @@ class Login extends React.Component {
                 TokenService.saveAuthToken(response.authToken);
                 TokenService.saveUserId(response.userId);
                 // window.location = "/user/dash";
-            })
-            .then((response) => {
-                console.log("response:", response);
             })
             .catch((err) => {
                 console.log(err);

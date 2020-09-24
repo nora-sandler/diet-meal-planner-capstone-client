@@ -54,14 +54,15 @@ class AddRecipes extends React.Component {
         }
     
         console.log("data")
+        let user_id = 1;
  
         let {spoonacular_id, recipe_name, recipe_img} = data;
         console.log(spoonacular_id, recipe_name, recipe_img)
         let payload = {
-            user_id: data.user_id,
+            user_id:user_id,
             spoonacular_id:data.spoonacular_id,
             recipe_name: data.recipe_name,
-            recipe_img:data.img
+            recipe_img:data.recipe_img
           }
         
           console.log(payload)
@@ -76,8 +77,9 @@ class AddRecipes extends React.Component {
         
             .then(response => {
               console.log("response", response)
-            //   window.location = `/book/add/${data.collection_id}` 
+           // window.location = `recipe/add/${data.spoonacular_id}` 
             })
+            
             .catch(err => {
               console.log(err);
             });
@@ -131,7 +133,6 @@ class AddRecipes extends React.Component {
                         <ul>
                             {foundRecipes}
                         </ul>
-                        <button type="submit">Next</button>
                     </div>
                 </section>
             </div>

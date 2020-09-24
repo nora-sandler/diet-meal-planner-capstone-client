@@ -92,7 +92,7 @@ class ListOfDiets extends React.Component {
         let existingRecipes = this.state.recipesByUserId.map(recipe => {
                 return(
                     <li>
-                      ??????  {recipe.diet_name}????????
+                        {recipe.diet_name}
                     </li>
                 )
         })
@@ -300,10 +300,10 @@ class ListOfDiets extends React.Component {
                         </li>
                         <li>
     
-                            {(diet.diet_name == "pescetarian") ?  
+                            {(diet.diet_name == "pescatarian") ?  
                             <h3 className = 'selectedDiet' > Pescetarian</h3>
                             : 
-                            <h3> Pescetarian</h3>
+                            <h3> Pescatarian</h3>
                             }
 
                             <p>

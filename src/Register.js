@@ -102,8 +102,8 @@ class Register extends React.Component {
 
       this.setState({ error: null })
       AuthApiService.postUser({
-          user_name: userName.value,
-          password: password.value,
+          user_name: userName,
+          password: password,
       })
   
       .then(response => {
