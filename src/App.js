@@ -7,7 +7,7 @@ import AddRecipes from './AddRecipes';
 import HowItWorks from './HowItWorks';
 import ListOfDiets from './ListOfDiets';
 import RecipeDetails from './RecipeDetails'
-import WeeklyCalendar from './WeeklyCalendar'
+// import WeeklyCalendar from './WeeklyCalendar'
 
 class App extends React.Component {
   render() {
@@ -23,7 +23,7 @@ class App extends React.Component {
 
         <Route path='/recipe-details/:recipeId' component={RecipeDetails} />
 
-        <Route path='/weekly-calendar/' component={WeeklyCalendar} />
+        {/* <Route path='/weekly-calendar/' component={WeeklyCalendar} /> */}
 
 
       </div>
