@@ -15,6 +15,7 @@ class AddRecipes extends React.Component {
 
     componentDidMount() {
         const dietName = this.props.match.params.dietName;
+        /////////////GET RECIPES FROM THE API/////////////////////////////////////////////////////////////
         let url = `${config.API_ENDPOINT}/recipe-by-diet-api-data/${dietName}`;
         console.log(url)
 
@@ -33,58 +34,164 @@ class AddRecipes extends React.Component {
                 console.log(err);
             });
 
-        console.log("Stateful component add recipe successfully mounted.");
+
     }
 
 
-    
     addRecipe(event) {
-        
+
         console.log('hello there')
 
         event.preventDefault()
-    
+
 
         const data = {}
-    
+
         const formData = new FormData(event.target)
-    
+
         for (let value of formData) {
             data[value[0]] = value[1]
         }
-    
-        console.log("data")
+
         let user_id = 1;
- 
-        let {spoonacular_id, recipe_name, recipe_img} = data;
+
+        let { spoonacular_id, recipe_name, recipe_img } = data;
         console.log(spoonacular_id, recipe_name, recipe_img)
         let payload = {
-            user_id:user_id,
-            spoonacular_id:data.spoonacular_id,
+            user_id: user_id,
+            spoonacular_id: data.spoonacular_id,
             recipe_name: data.recipe_name,
-            recipe_img:data.recipe_img
-          }
-        
-          console.log(payload)
-        
-          fetch(`${config.API_ENDPOINT}/recipes`, {
-              method: 'POST',
-              headers: {
+            recipe_img: data.recipe_img
+        }
+
+        console.log(payload)
+
+////////////////POST RECIPE//////////////////////////////////////////////
+
+        fetch(`${config.API_ENDPOINT}/recipes`, {
+            method: 'POST',
+            headers: {
                 'content-type': 'application/json',
-              },
-              body: JSON.stringify(payload),
-            })
-        
+            },
+            body: JSON.stringify(payload),
+        })
+
             .then(response => {
-              console.log("response", response)
-           // window.location = `recipe/add/${data.spoonacular_id}` 
+                //console.log("response", response)
+
+
+
+
+                //////////GET RECIPE_DETAILS/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                let addRecipeDetailsBySponacularIdUrl = `${config.API_ENDPOINT}/recipe-by-spoonacular-id-api-data/${spoonacular_id}`;
+                console.log(addRecipeDetailsBySponacularIdUrl)
+
+                fetch(addRecipeDetailsBySponacularIdUrl)
+                    .then((response) => response.json())
+
+                    .then((recipeDetailsData) => {
+                        //console.log(recipeDetailsData)
+                        console.log(recipeDetailsData[0].analyzedInstructions[0].steps[0].equipment)
+                        let recipeDetailsPayload =
+                        {
+
+                            spoonacular_id: recipeDetailsData[0].id,
+                            diet_name: recipeDetailsData[0].diets[0],
+                            recipe_name: recipeDetailsData[0].title,
+                            recipe_img: recipeDetailsData[0].image,
+                            recipe_ingredients: recipeDetailsData[0].extendedIngredients[0],
+                            nutrition_info: recipeDetailsData[0].nutrition.caloricBreakdown,
+                            recipe_equipment: recipeDetailsData[0].analyzedInstructions[0].steps[0].equipment,
+                            recipe_instruction: recipeDetailsData[0].instructions
+                        }
+
+                        console.log(recipeDetailsPayload)
+
+
+
+
+
+
+
+
+
+
+
+
+                        ////////POST RECIPE_DETAILS//////////////////////////////////////////////////////////
+        
+                        fetch(`${config.API_ENDPOINT}/recipe-details`, {
+                            method: 'POST',
+                            headers: {
+                                'content-type': 'application/json',
+                            },
+                            body: JSON.stringify(recipeDetailsPayload),
+                        })
+
+                            .then(response => {
+                                console.log("response", response)
+
+                            })
+
+                            .catch(err => {
+                                console.log(err);
+                            });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    })
+
+                    .catch((err) => {
+                        console.log(err);
+                    });
+                ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                // window.location = `recipe/add/${data.spoonacular_id}` 
             })
-            
+
             .catch(err => {
-              console.log(err);
+                console.log(err);
             });
-    
-      }
+
+    }
 
     render() {
         let foundRecipes = this.state.recipesFound.map(recipe => {
