@@ -9,12 +9,17 @@ class AddRecipes extends React.Component {
         this.state = {
             recipesFound: [],
             params: {},
+            response: [],
+            selectedDietName:''
 
         };
     }
 
     componentDidMount() {
         const dietName = this.props.match.params.dietName;
+        this.setState({
+            selectedDietName: dietName
+        });
         /////////////GET RECIPES FROM THE API/////////////////////////////////////////////////////////////
         let url = `${config.API_ENDPOINT}/recipe-by-diet-api-data/${dietName}`;
         console.log(url)
@@ -40,7 +45,7 @@ class AddRecipes extends React.Component {
 
     addRecipe(event) {
 
-        console.log('hello there')
+        // console.log('hello there')
 
         event.preventDefault()
 
@@ -55,18 +60,21 @@ class AddRecipes extends React.Component {
 
         let user_id = 1;
 
-        let { spoonacular_id, recipe_name, recipe_img } = data;
-        console.log(spoonacular_id, recipe_name, recipe_img)
+        let { spoonacular_id, recipe_name, recipe_img, selectedDietName} = data;
+        // console.log(spoonacular_id, recipe_name, recipe_img)
         let payload = {
             user_id: user_id,
-            spoonacular_id: data.spoonacular_id,
-            recipe_name: data.recipe_name,
-            recipe_img: data.recipe_img
+            spoonacular_id: spoonacular_id,
+            recipe_name: recipe_name,
+            recipe_img: recipe_img,
+
         }
+        
+        const dietName = selectedDietName
 
-        console.log(payload)
+        // console.log(payload)
 
-////////////////POST RECIPE//////////////////////////////////////////////
+        ////////////////POST RECIPE//////////////////////////////////////////////
 
         fetch(`${config.API_ENDPOINT}/recipes`, {
             method: 'POST',
@@ -75,9 +83,9 @@ class AddRecipes extends React.Component {
             },
             body: JSON.stringify(payload),
         })
-
-            .then(response => {
-                //console.log("response", response)
+            .then((response) => response.json())
+            .then(responseJson => {
+                console.log("post recipe response", responseJson)
 
 
 
@@ -90,36 +98,32 @@ class AddRecipes extends React.Component {
                     .then((response) => response.json())
 
                     .then((recipeDetailsData) => {
-                        //console.log(recipeDetailsData)
+                        console.log(recipeDetailsData)
                         console.log(recipeDetailsData[0].analyzedInstructions[0].steps[0].equipment)
+                        let equipment_string = recipeDetailsData[0].analyzedInstructions[0].steps[0].equipment.map(item =>{
+                           return item.name
+                        })
+                        let dietNameString = dietName;
+                        if (recipeDetailsData[0].diets[0]) {
+                            dietNameString = recipeDetailsData[0].diets[0]
+
+                        }
                         let recipeDetailsPayload =
                         {
-
+                            recipe_id:responseJson.id,
                             spoonacular_id: recipeDetailsData[0].id,
-                            diet_name: recipeDetailsData[0].diets[0],
+                            diet_name: dietNameString ,
                             recipe_name: recipeDetailsData[0].title,
                             recipe_img: recipeDetailsData[0].image,
-                            recipe_ingredients: recipeDetailsData[0].extendedIngredients[0],
+                            recipe_ingredients: recipeDetailsData[0].extendedIngredients[0].original,
                             nutrition_info: recipeDetailsData[0].nutrition.caloricBreakdown,
-                            recipe_equipment: recipeDetailsData[0].analyzedInstructions[0].steps[0].equipment,
+                            recipe_equipment: equipment_string,
                             recipe_instruction: recipeDetailsData[0].instructions
                         }
 
                         console.log(recipeDetailsPayload)
-
-
-
-
-
-
-
-
-
-
-
-
                         ////////POST RECIPE_DETAILS//////////////////////////////////////////////////////////
-        
+
                         fetch(`${config.API_ENDPOINT}/recipe-details`, {
                             method: 'POST',
                             headers: {
@@ -127,56 +131,14 @@ class AddRecipes extends React.Component {
                             },
                             body: JSON.stringify(recipeDetailsPayload),
                         })
-
                             .then(response => {
                                 console.log("response", response)
-
+                                // window.location = `/diet/show`
+                                
                             })
-
                             .catch(err => {
                                 console.log(err);
                             });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
                     })
 
@@ -219,6 +181,7 @@ class AddRecipes extends React.Component {
                         <input type='hidden' name='spoonacular_id' defaultValue={recipe.id}></input>
                         <input type='hidden' name='recipe_name' defaultValue={recipe.title}></input>
                         <input type='hidden' name='recipe_img' defaultValue={recipe.image}></input>
+                        <input type='hidden' name='selectedDietName' defaultValue={this.state.selectedDietName}></input>
                         <button type='submit' className='addRecipeBtn'>Add recipe</button>
                     </form>
 

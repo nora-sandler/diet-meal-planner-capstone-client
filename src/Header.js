@@ -5,7 +5,7 @@ function Header() {
   return (
     <header>
       <div className="logo">
-        <img src="img.jpg" alt="alt-image" />
+        <img src="freezer-meals" alt="alt-image" />
      </div>
       <nav>
         <ul>
@@ -15,9 +15,9 @@ function Header() {
           <li>
             <a href="#">Login</a>
           </li>
-          <li>
+          {/* <li>
             <a href="#">How it works</a>
-          </li>
+          </li> */}
         </ul>
       </nav>
     </header>

@@ -27,10 +27,24 @@ General styles (General Module, wrapping around the modules below)
 */
 
 body {
-  border: 3px solid white;
-  font-family: Arial, Helvetica, sans-serif;
+  /* border: 3px solid white;
+  font-family: Arial, Helvetica, sans-serif; */
+
+  background-image: url('freezer-meals.jpg');
+  background-size: 90% auto;
+  display: flex;
+  font-family: 'Open Sans', sans-serif;
+  color: white;
 }
-header,
+header {
+    display: flex; 
+    background-color:white;
+    justify-content: space-between;	
+    width: 100%;	 
+    padding: 11px;	
+    border-bottom: 1px solid lightgrey;
+  }
+
 nav,
 section,
 div {

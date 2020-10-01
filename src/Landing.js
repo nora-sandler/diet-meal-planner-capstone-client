@@ -21,7 +21,6 @@ class Landing extends React.Component {
             only save a lot of time but also will make meal planning easier and
             organized.
           </div>
-          <div id="howItWorks">How it works</div>
         </section>
         <Register />
         <Login />
