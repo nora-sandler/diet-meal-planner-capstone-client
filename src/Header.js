@@ -1,25 +1,24 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './App.css';
 
-function Header() {
+
+function Header(props) {
   return (
     <header>
-      <div className="logo">
-        <img src="freezer-meals" alt="alt-image" />
-     </div>
       <nav>
-        <ul>
-          <li>
-            <a href="#">Sign Up</a>
-          </li>
-          <li>
-            <a href="#">Login</a>
-          </li>
-          {/* <li>
-            <a href="#">How it works</a>
-          </li> */}
-        </ul>
-      </nav>
+      <ul>
+      <li>
+      <Link to='/signup' >Sign Up</Link>
+      </li>
+      <li>
+      <Link to='/login' >Login</Link>
+      </li>
+      
+      </ul>
+      
+</nav>
+
     </header>
   );
 }
