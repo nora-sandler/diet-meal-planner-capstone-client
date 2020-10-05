@@ -178,7 +178,7 @@ class Register extends React.Component {
                         )}
 
                         <button
-                            className="s-button"
+                            className="signup-button"
                             type="submit"
                             disabled={this.state.submitButtonDisabled}
                         >
@@ -187,7 +187,7 @@ class Register extends React.Component {
                     </form>
                     <div className="login">
                         <p>
-                            Already have an account? <a href="#">Log in here</a>
+                            Already have an account? <a href="/user/login">Log in here</a>
                         </p>
                     </div>
                 </section>

@@ -7,7 +7,7 @@ function Header(props) {
   return (
     <header>
       <nav>
-      <ul>
+      {/* <ul>
       <li>
       <Link to='/signup' >Sign Up</Link>
       </li>
@@ -15,9 +15,17 @@ function Header(props) {
       <Link to='/login' >Login</Link>
       </li>
       
-      </ul>
-      
-</nav>
+      </ul> */}
+        <ul>
+          <li>
+            <a href="/">Sign Up</a>
+          </li>
+          <li>
+            <a href="/user/login">Login</a>
+          </li>
+        </ul>
+      </nav>
+
 
     </header>
   );

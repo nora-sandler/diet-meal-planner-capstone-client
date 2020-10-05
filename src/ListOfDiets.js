@@ -128,7 +128,7 @@ class ListOfDiets extends React.Component {
                                     defaultValue={dietInfo.dietListId}
                                 ></input>
                                 <button type="submit" className="dietDeleteBtn">
-                                    Delete Diet
+                                    Delete diet
                                 </button>
                                 <NavLink className ='s-button' to="/recipe/add/gluten">Show recipes</NavLink>
                             </form>
@@ -137,7 +137,7 @@ class ListOfDiets extends React.Component {
                         {(diet.diet_name == "keto") ?  
                             <h3 className = 'selectedDiet' > Ketogenic (0)</h3>
                             : 
-                            <h3> Ketogenic (0)</h3>
+                            <h3> Ketogenic </h3>
                             }
 
                             <p>
