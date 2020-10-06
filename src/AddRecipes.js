@@ -85,34 +85,30 @@ class AddRecipes extends React.Component {
         })
             .then((response) => response.json())
             .then(responseJson => {
-                console.log("post recipe response", responseJson)
+                // console.log("post recipe response", responseJson)
 
 
 
 
                 //////////GET RECIPE_DETAILS/////////////////////////////////////////////////////////////////////////////////////////////////////////////
                 let addRecipeDetailsBySponacularIdUrl = `${config.API_ENDPOINT}/recipe-by-spoonacular-id-api-data/${spoonacular_id}`;
-                console.log(addRecipeDetailsBySponacularIdUrl)
+                // console.log(addRecipeDetailsBySponacularIdUrl)
 
                 fetch(addRecipeDetailsBySponacularIdUrl)
                     .then((response) => response.json())
 
                     .then((recipeDetailsData) => {
                         console.log(recipeDetailsData)
-                        console.log(recipeDetailsData[0].analyzedInstructions[0].steps[0].equipment)
+                        // console.log(recipeDetailsData[0].analyzedInstructions[0].steps[0].equipment)
                         let equipment_string = recipeDetailsData[0].analyzedInstructions[0].steps[0].equipment.map(item =>{
                            return item.name
                         })
-                        let dietNameString = dietName;
-                        if (recipeDetailsData[0].diets[0]) {
-                            dietNameString = recipeDetailsData[0].diets[0]
-
-                        }
+                        
                         let recipeDetailsPayload =
                         {
                             recipe_id:responseJson.id,
                             spoonacular_id: recipeDetailsData[0].id,
-                            diet_name: dietNameString ,
+                            diet_name: dietName,
                             recipe_name: recipeDetailsData[0].title,
                             recipe_img: recipeDetailsData[0].image,
                             recipe_ingredients: recipeDetailsData[0].extendedIngredients[0].original,
@@ -132,7 +128,7 @@ class AddRecipes extends React.Component {
                             body: JSON.stringify(recipeDetailsPayload),
                         })
                             .then(response => {
-                                console.log("response", response)
+                                // console.log("response", response)
                                 // window.location = `/diet/show`
                                 
                             })

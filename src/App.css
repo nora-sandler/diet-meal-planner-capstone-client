@@ -124,9 +124,7 @@ header {
     padding: 5px;
 }
 
-nav{
 
-}
 section,
 div {
   width: 90%;
@@ -241,13 +239,14 @@ font-family: 'aglet-slab', sans-serif;
 
 
 
-footer {
-  background-color: floralwhite;
+.Footer {
+  
   text-align: center;
   width: 100%;
   padding: 14px;
   border-top: 1px solid lightgrey;
-  height: 40px
+  height: 40px;
+  display: inline-block;
 }
 
 /* -------------------------------------
