@@ -1,4 +1,5 @@
 import React from "react";
+import RecipesForDiets from "./RecipesForDiets";
 import Header from "./Header";
 import TokenService from "./services/token-service.js";
 import config from "./config";
@@ -99,16 +100,16 @@ class ListOfDiets extends React.Component {
         let diet = "diet text";
         let dietInfo = "diet info text";
         const existingDiets = this.state.dietsByUserId.map((diet, key) => {
-            return (<ul>
+            return (<ul key ={key}>
                 <li>
-                    {(diet.diet_name == "gluten free") ?
+                    {(diet.diet_name == "glutenfree") ?
                         <h3 className='selectedDiet' > Gluten Free</h3>
                         :
                         <h3> Gluten Free</h3>
                     }
 
                     <p>
-                        Eliminating gluten means avoiding wheat, barley,
+                        Eliminating gluten meals avoiding wheat, barley,
                         rye, and other gluten-containing grains and
                         foods made from them (or that may have been
                         cross contaminated).
@@ -130,8 +131,9 @@ class ListOfDiets extends React.Component {
                         <button type="submit" className="dietDeleteBtn">
                             Delete diet
                                 </button>
-                        <NavLink className='s-button' to="/recipe/add/gluten-free">Show recipes</NavLink>
+                        <NavLink className='s-button' to="/recipe/add/glutenfree">Show recipes</NavLink>
                     </form>
+                    <RecipesForDiets dietName = "glutenfree"/>
                 </li>
                 <li>
                     {(diet.diet_name == "dairy free") ?
@@ -144,7 +146,7 @@ class ListOfDiets extends React.Component {
                         Dairy Free
                             </p>
 
-                    {(diet.diet_name == "dairy free") ?
+                    {(diet.diet_name == "dairyfree") ?
                         <ul>{existingRecipes}</ul>
                         :
                         <div> </div>
@@ -169,6 +171,7 @@ class ListOfDiets extends React.Component {
                                 </button>
                         <NavLink className='s-button' to="/recipe/add/dairy-free">Show recipes</NavLink>
                     </form>
+                    <RecipesForDiets dietName = "dairyfree"/>
                 </li>
                 <li>
                     {(diet.diet_name == "vegetarian") ?
@@ -199,6 +202,7 @@ class ListOfDiets extends React.Component {
                                 </button>
                         <NavLink className='s-button' to="/recipe/add/vegetarian">Show recipes</NavLink>
                     </form>
+                    <RecipesForDiets dietName = "vegetarian"/>
                 </li>
                 <li>
                     {(diet.diet_name == "lacto ovo vegetarian") ?
@@ -230,6 +234,7 @@ class ListOfDiets extends React.Component {
                                 </button>
                         <NavLink className='s-button' to="/recipe/add/lacto-ovo-vegetarian">Show recipes</NavLink>
                     </form>
+                    <RecipesForDiets dietName = "lacto-ovo-vegetarian"/>
                 </li>
                 <li>
 
@@ -262,6 +267,7 @@ class ListOfDiets extends React.Component {
                                 </button>
                         <NavLink className='s-button' to="/recipe/add/vegan">Show recipes</NavLink>
                     </form>
+                    <RecipesForDiets dietName = "vegan"/>
                 </li>
                 <li>
 
@@ -295,6 +301,7 @@ class ListOfDiets extends React.Component {
                                 </button>
                         <NavLink className='s-button' to="/recipe/add/pescatarian">Show recipes</NavLink>
                     </form>
+                    <RecipesForDiets dietName = "pescatarian"/>
                 </li>
                 <li>
 
@@ -333,6 +340,7 @@ class ListOfDiets extends React.Component {
                                 </button>
                         <NavLink className='s-button' to="/recipe/add/paleolithic">Show recipes</NavLink>
                     </form>
+                    <RecipesForDiets dietName = "paleolithic"/>
                 </li>
                 <li>
 
@@ -364,8 +372,75 @@ class ListOfDiets extends React.Component {
                                 </button>
                         <NavLink className='s-button' to="/recipe/add/primal">Show recipes</NavLink>
                     </form>
+                    <RecipesForDiets dietName = "primal"/>
+                </li>
+                <li>
+
+                    {(diet.diet_name == "calorie") ?
+                        <h3 className='selectedDiet' > Calorie-based</h3>
+                        :
+                        <h3> Calorie-based</h3>
+                    }
+
+                    <p>
+                        #####.
+                            </p>
+                    <form
+                        className="dietForm"
+                        onSubmit={this.deleteDiet}
+                    >
+                        <input
+                            type="hidden"
+                            name="dietId"
+                            defaultValue={diet.id}
+                        ></input>
+                        <input
+                            type="hidden"
+                            name="dietId"
+                            defaultValue={dietInfo.dietListId}
+                        ></input>
+                        <button type="submit" className="dietDeleteBtn">
+                            Delete diet
+                                </button>
+                        <NavLink className='s-button' to="/recipe/add/calorie">Show recipes</NavLink>
+                    </form>
+                    <RecipesForDiets dietName = "calorie"/>
+                </li>
+                <li>
+
+                    {(diet.diet_name == "protein") ?
+                        <h3 className='selectedDiet' > Protein diet</h3>
+                        :
+                        <h3> Protein diet</h3>
+                    }
+
+                    <p>
+                        #####.
+                            </p>
+                    <form
+                        className="dietForm"
+                        onSubmit={this.deleteDiet}
+                    >
+                        <input
+                            type="hidden"
+                            name="dietId"
+                            defaultValue={diet.id}
+                        ></input>
+                        <input
+                            type="hidden"
+                            name="dietId"
+                            defaultValue={dietInfo.dietListId}
+                        ></input>
+                        <button type="submit" className="dietDeleteBtn">
+                            Delete diet
+                                </button>
+                        <NavLink className='s-button' to="/recipe/add/protein">Show recipes</NavLink>
+                    </form>
+                    <RecipesForDiets dietName = "protein"/>
                 </li>
             </ul>
+            
+            
             )
         })
         // let dietInfo = {
