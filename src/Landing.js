@@ -24,9 +24,9 @@ class Landing extends React.Component {
             
           </div>
         </section>
-        <Register />
-        <Login />
-        <Footer />
+        {/* <Register/>
+        <Login/> */}
+        <Footer/>
       </div>
     );
   }

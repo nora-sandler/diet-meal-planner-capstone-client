@@ -80,7 +80,7 @@ class Login extends React.Component {
                 // password.value = "";
                 TokenService.saveAuthToken(response.authToken);
                 TokenService.saveUserId(response.userId);
-                // window.location = "/user/dash";
+                window.location = "/diet/show/";
             })
             .catch((err) => {
                 console.log(err);

@@ -30,16 +30,16 @@ body {
   /* border: 3px solid white;
   font-family: Arial, Helvetica, sans-serif; */
 
-  background-image: url('background-img.jpg') ; 
+  background-image: url('background-img.jpg');
   background-size: 100% auto;
-  background-repeat: no repeat;
+  background-repeat: repeat;
   display: flex;
   font-family: 'aglet-slab', sans-serif;
   text-align: center;
   font-size: large;
   /* font-style: italic; */
 }
-header {
+.Header {
     display: flex; 
     background-color: transparent;
     justify-content: space-between;	
@@ -48,8 +48,9 @@ header {
     border-bottom: 1px solid lightgrey;
   }
 
-  .Landing{
-    width: 500px;
+  .Landing {
+    
+    width: 600px;
     height: unset;
     background: rgba(255, 255, 255, 0.6);
     border-radius: 10px;
@@ -57,6 +58,14 @@ header {
     margin-top: 40px;
     padding: 72px;
     text-align: left;
+  }
+
+  .selectedDiet{
+    background-color:red;
+  }
+
+  .RecipesForDiets{
+    font-size: 1px;
   }
 
   .go-button{
@@ -80,7 +89,7 @@ header {
     text-align: center;
     text-decoration: none;
     font-size: 15px;
-    border: 1px solid #747070;
+    border: 1px solid #361f1f;
     border-radius: 190px;
     width: 30%;
   }
@@ -102,7 +111,7 @@ header {
     font-style: normal;
     font-weight: 900;
     font-size: 2.25rem;
-    color: #4B6182;
+    color: #4B6182;;
     
   }
 
@@ -122,6 +131,11 @@ header {
     text-decoration: none;
     color: black;
     padding: 5px;
+}
+
+
+.recipeImage{
+  width: 50%;
 }
 
 
@@ -148,7 +162,7 @@ input[type="password"] {
 input[type="text"]:focus,
 input[type="password"]:focus {
   background-color: #ddd;
-  outline: none;
+  outline: 
 }
 
 /* Set a style for the submit button */
@@ -204,8 +218,10 @@ button:hover {
 
 /* Add a blue text color to links */
 a {
+  font-size: 20px;
   text-decoration:none;
   color: dodgerblue;
+  padding: 15px;
 }
 
 a:hover{
@@ -217,24 +233,24 @@ h1 {
 }
 
 h3 {
-  font-family: skolar-sans-latin-extended, sans-serif;
+    font-family: skolar-sans-latin-extended, sans-serif;
     font-style: normal;
     font-weight: 900;
     font-size: 2.25rem;
     color: #4B6182;
-    background: rgba(255, 255, 255, 0.6);
+    
 }
 
 
 p {
-font-family: 'aglet-slab', sans-serif;
+    font-family: 'aglet-slab', sans-serif;
     font-style: normal;
     font-weight: 700;
     font-size: 1.0625rem;
     line-height: 2rem;
     color: #373E40;
     padding-top: 15px;
-    background: rgba(255, 255, 255, 0.6);
+
 }
 
 
@@ -258,13 +274,11 @@ Header styles (Main Module)
 Content styles (Main Module)
 (all the styles inside the < sections > or < aside > tags)
 */
-.selectedDiet {
+/* .selectedDiet {
   color: red;
-}
+} */
 
-.recipeImage{
-  width: 100%;
-}
+
 /* Table styles */
 /* div.weekly-meal-calendar {
   font-family: Tahoma, Geneva, sans-serif;

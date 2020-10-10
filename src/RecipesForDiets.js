@@ -69,12 +69,7 @@ console.log(this.state)
             if (recipe) {
                 return (
                     <li>
-                       <p>{recipe.recipe_name} </p> 
-                       <p>{recipe.recipe_ingredients} </p> 
-                       <p>{recipe.recipe_instructions} </p> 
-                       <p>{recipe.recipe_img} </p> 
-                       <p>{recipe.recipe_equipment} </p> 
-                       
+                       <p>{recipe.recipe_name} </p>                      
                     </li>
             )}
         })
@@ -93,7 +88,7 @@ console.log(this.state)
         return (
             <section id="RecipesForDiets">
                 <div className="RecipesForDiets">
-                    <h3>Recipes by diet</h3>
+                    <h3>Recipes</h3>
                     {existingRecipes }
                 </div>
             </section>

@@ -16,14 +16,14 @@ function Header(props) {
       </li>
       
       </ul> */}
-        <ul>
-          <li>
-            <a href="/">Sign Up</a>
-          </li>
-          <li>
-            <a href="/user/login">Login</a>
-          </li>
-        </ul>
+        {/* <ul>
+          <li> */}
+            <a href="/signup"> Sign Up </a>
+          {/* </li>
+          <li> */}
+            <a href="/user/login"> Login </a>
+          {/* </li>
+        </ul> */}
       </nav>
 
 

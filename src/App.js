@@ -7,6 +7,8 @@ import AddRecipes from './AddRecipes';
 import HowItWorks from './HowItWorks';
 import ListOfDiets from './ListOfDiets';
 import RecipeDetails from './RecipeDetails'
+import Login from './Login'
+import Register from './Register';
 // import WeeklyCalendar from './WeeklyCalendar'
 
 class App extends React.Component {
@@ -17,11 +19,15 @@ class App extends React.Component {
 
         {/* <Route path='/how-it-works' component={HowItWorks} /> */}
 
+        <Route path='/user/login' component={Login} />
+
+        <Route path='/signup' component={Register} />
+
         <Route path='/diet/show/' component={ListOfDiets} />
 
         <Route path='/recipe/add/:dietName' component={AddRecipes} />
 
-        <Route path='/recipe-details/:recipeId' component={RecipeDetails} />
+        {/* <Route path='/recipe-details/:recipeId' component={RecipeDetails} /> */}
 
         {/* <Route path='/weekly-calendar/' component={WeeklyCalendar} /> */}
 
