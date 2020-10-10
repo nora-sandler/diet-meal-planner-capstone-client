@@ -29,7 +29,7 @@ class RecipesForDiets extends React.Component {
                 this.setState({
                     dietsByUserId: dietsInList,
                 });
-                console.log(this.state);
+                // console.log(this.state);
             })
 
             .catch((error) => this.setState({ error }));
@@ -45,16 +45,26 @@ class RecipesForDiets extends React.Component {
         fetch(getRecipesByUserId)
             .then((recipesInList) => recipesInList.json())
             .then((recipesInList) => {
-                console.log(recipesInList[0].diet_name)
-                let filterRecipesByDietName = recipesInList.map((recipe, key) => {
-                    if (recipe.diet_name == this.props.dietName) {
-                        return recipe
-                    }
+                // console.log(recipesInList[0].diet_name)
+                // let filterRecipesByDietName = recipesInList.map((recipe, key) => {
+                //     console.log(recipe.diet_name)
+                //     console.log(this.props.dietName)
+                //     let output = ''
+                //     if (recipe.diet_name == this.props.dietName) {
+                //          output = recipe
+                //     }
+                //     return output
+                // })
+                let filterRecipesByDietName = recipesInList.filter((recipe) => {
+
+                    return (recipe.diet_name == this.props.dietName) 
+
+            
                 })
                 this.setState({
                     recipesByUserId: filterRecipesByDietName,
                 });
-console.log(this.state)
+                console.log(this.state)
             })
 
             .catch((error) => this.setState({ error }));
@@ -62,35 +72,41 @@ console.log(this.state)
     }
 
 
-    
+
     render() {
+        // console.log(this.state.recipesByUserId.length)
+        let showRecipePage = ''
+        //by default show there are no recipes 
+        if (this.state.recipesByUserId.length == 0) { 
+        showRecipePage =
+            <div className="RecipesForDiets">
+                No recipes here
+            </div>
+        }
+        // if there are recipes fir this diet
+        else {
 
-        let existingRecipes = this.state.recipesByUserId.map(recipe => {
-            if (recipe) {
-                return (
-                    <li>
-                       <p>{recipe.recipe_name} </p>                      
-                    </li>
-            )}
-        })
+            // display details for each one of the recipes
+            let existingRecipes = this.state.recipesByUserId.map((recipe, key) => {
+                if (recipe) {
+                    return (
+                        <li key ={key}> 
+                            <p>{recipe.recipe_name} </p>
+                        </li>
+                    )
+                }
+            })
 
-        // const existingDiets = this.state.dietsByUserId.map((diet, key) => {
-        //     return (<ul key = {key}>
-        //         <li>
-        //         {diet.diet_name}
-        //         </li>
-        //        </ul>
-            
-            
-        //     )
-        // })
-
-        return (
-            <section id="RecipesForDiets">
+            // display recipeDetails to the page
+            showRecipePage =
                 <div className="RecipesForDiets">
                     <h3>Recipes</h3>
-                    {existingRecipes }
+                    {existingRecipes}
                 </div>
+        }
+        return (
+            <section id="RecipesForDiets">
+                {showRecipePage}
             </section>
         );
     }

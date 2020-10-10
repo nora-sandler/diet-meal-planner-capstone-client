@@ -423,12 +423,7 @@ class ListOfDiets extends React.Component {
                 <div>
                     <ul>
                         <li>
-                            {/* {(diet.diet_name == "glutenfree") ?
-                                <h3 className='selectedDiet' > Gluten Free</h3>
-                                : */}
                             <h3> Gluten Free</h3>
-                            {/* } */}
-
                             <p>
                                 Eliminating gluten meals avoiding wheat, barley,
                                 rye, and other gluten-containing grains and
@@ -439,11 +434,7 @@ class ListOfDiets extends React.Component {
                             <RecipesForDiets dietName="glutenfree" />
                         </li>
                         <li>
-                            {/* {(diet.diet_name == "vegetarian") ?
-                                <h3 className='selectedDiet' > Vegetarian</h3>
-                                : */}
                             <h3> Vegetarian</h3>
-                            {/* } */}
                             <p>
                                 No ingredients may contain meat or meat
                                 by-products, such as bones or gelatin.
@@ -452,11 +443,7 @@ class ListOfDiets extends React.Component {
                             <RecipesForDiets dietName="vegetarian" />
                         </li>
                         <li>
-                            {/* {(diet.diet_name == "lacto ovo vegetarian") ?
-                                <h3 className='selectedDiet' > Lacto ovo vegetarian</h3>
-                                : */}
                             <h3> Lacto ovo vegetarian</h3>
-                            {/* } */}
 
                             <p>
                                 All ingredients must be vegetarian and none of
@@ -467,11 +454,7 @@ class ListOfDiets extends React.Component {
                         </li>
                         <li>
 
-                            {/* {(diet.diet_name == "vegan") ?
-                                <h3 className='selectedDiet' > Vegan</h3>
-                                : */}
                             <h3> Vegan</h3>
-                            {/* } */}
                             <p>
                                 No ingredients may contain meat or meat
                                 by-products, such as bones or gelatin, nor may
@@ -482,11 +465,7 @@ class ListOfDiets extends React.Component {
                         </li>
                         <li>
 
-                            {/* {(diet.diet_name == "pescatarian") ?
-                                <h3 className='selectedDiet' > Pescatarian</h3>
-                                : */}
                             <h3> Pescatarian</h3>
-                            {/* } */}
 
                             <p>
                                 Everything is allowed except meat and meat
@@ -498,11 +477,7 @@ class ListOfDiets extends React.Component {
                         </li>
                         <li>
 
-                            {/* {(diet.diet_name == "paleolithic") ?
-                                <h3 className='selectedDiet' > Paleolithic</h3>
-                                : */}
                             <h3> Paleolithic</h3>
-                            {/* } */}
                             <p>
                                 Allowed ingredients include meat (especially
                                 grass fed), fish, eggs, vegetables, some oils
@@ -519,11 +494,7 @@ class ListOfDiets extends React.Component {
                         </li>
                         <li>
 
-                            {/* {(diet.diet_name == "primal") ?
-                                <h3 className='selectedDiet' > Primal</h3>
-                                : */}
                             <h3> Primal</h3>
-                            {/* } */}
                             <p>
                                 Very similar to Paleo, except dairy is allowed -
                                 think raw and full fat milk, butter, ghee, etc.
@@ -533,26 +504,18 @@ class ListOfDiets extends React.Component {
                         </li>
                         <li>
 
-                            {/* {(diet.diet_name == "calorie") ?
-                                <h3 className='selectedDiet' > Calorie-based</h3>
-                                : */}
                             <h3> Calorie-based</h3>
-                            {/* } */}
 
                             <p>
-                            The average woman needs to eat about 2,000 calories per day to maintain her weight, and 1,500 calories per day to lose one pound of weight per week. 
-                            Meanwhile, the average man needs 2,500 calories to maintain, and 2,000 to lose one pound of weight per week.
+                                The average woman needs to eat about 2,000 calories per day to maintain her weight, and 1,500 calories per day to lose one pound of weight per week.
+                                Meanwhile, the average man needs 2,500 calories to maintain, and 2,000 to lose one pound of weight per week.
                             </p>
                             <NavLink className='s-button' to="/recipe/add/calorie">Show recipes</NavLink>
                             <RecipesForDiets dietName="calorie" />
                         </li>
                         <li>
 
-                            {/* {(diet.diet_name == "protein") ?
-                                <h3 className='selectedDiet' > Protein diet</h3>
-                                : */}
                             <h3> Protein diet</h3>
-                            {/* } */}
 
                             <p>
                                 Going on a high-protein diet may help you tame your hunger, which could help you lose weight.
