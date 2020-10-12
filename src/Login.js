@@ -5,65 +5,65 @@ import AuthApiService from "./services/auth-api-service";
 import TokenService from "./services/token-service.js";
 
 class Login extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { 
-      userName: {
-        value: "",
-        touched: false,
-    },
-    password: {
-        value: "",
-        touched: false,
-    },
-      LogInUserID: 0,
-      error: null,
-     };
-  }
+    constructor(props) {
+        super(props);
+        this.state = {
+            userName: {
+                value: "",
+                touched: false,
+            },
+            password: {
+                value: "",
+                touched: false,
+            },
+            LogInUserID: 0,
+            error: null,
+        };
+    }
 
     changeUsername(userName) {
         this.setState({
-            userName: { value: userName},
+            userName: { value: userName },
         });
     }
 
     changePassword(password) {
         this.setState({
-            password: { value: password},
+            password: { value: password },
         });
     }
 
     validateUserName() {
-      const userName = this.state.userName.value.trim();
-      if (userName.length === 0) {
-          return <p className="input-error">Username is required</p>;
-      } else if (userName.length < 2) {
-          return (
-              <p className="input-error">
-                  Username must be at least 2 characters long
-              </p>
-          );
-      }
-  }
+        const userName = this.state.userName.value.trim();
+        if (userName.length === 0) {
+            return <p className="input-error">Username is required</p>;
+        } else if (userName.length < 2) {
+            return (
+                <p className="input-error">
+                    Username must be at least 2 characters long
+                </p>
+            );
+        }
+    }
 
-  validatePassword() {
-      const password = this.state.password.value.trim();
-      if (password.length === 0) {
-          return <p className="input-error">Password is required</p>;
-      } else if (password.length < 6 || password.length > 72) {
-          return (
-              <p className="input-error">
-                  Password must be between 6 and 72 characters long
-              </p>
-          );
-      } else if (!password.match(/[0-9]/)) {
-          return (
-              <p className="input-error">
-                  Password must contain at least one number
-              </p>
-          );
-      }
-  }
+    validatePassword() {
+        const password = this.state.password.value.trim();
+        if (password.length === 0) {
+            return <p className="input-error">Password is required</p>;
+        } else if (password.length < 6 || password.length > 72) {
+            return (
+                <p className="input-error">
+                    Password must be between 6 and 72 characters long
+                </p>
+            );
+        } else if (!password.match(/[0-9]/)) {
+            return (
+                <p className="input-error">
+                    Password must contain at least one number
+                </p>
+            );
+        }
+    }
 
     loginUser = (event) => {
         event.preventDefault();
@@ -91,8 +91,8 @@ class Login extends React.Component {
         return (
             <div className="Login">
                 <section id="loginPage">
+                    <h2>Login</h2>
                     <form className="loginForm" onSubmit={this.loginUser}>
-                        <h2>Login</h2>
                         <label htmlFor="userName">Username</label>
                         <input
                             type="text"

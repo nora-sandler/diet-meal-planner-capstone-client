@@ -32,8 +32,8 @@ body {
   padding: 0;
   font-family: 'aglet-slab', sans-serif;
   text-align: center;
-  font-size: large;
-  font-style: italic;
+  font-size: normal;
+  
 }
 
 /* Full-width input fields */
@@ -135,6 +135,7 @@ p {
   line-height: 2rem;
   color: #373E40;
   padding-top: 15px;
+  padding-bottom: 15px;
 }
 
 /* -------------------------------------
@@ -202,9 +203,11 @@ Content styles (Main Module)
 
 .go-button {
   margin: 15px 0px;
+  margin-left: 30%;
+  margin-right: 30%;
   background-color: pink;
   color: black;
-  padding: 10px 12px;
+  padding: 10px 5px;
   text-align: center;
   text-decoration: none;
   font-size: 15px;
@@ -217,13 +220,13 @@ Content styles (Main Module)
   margin: 15px 0px;
   background-color: pink;
   color: black;
-  padding: 10px 12px;
+  padding: 10px 5px;
   text-align: center;
   text-decoration: none;
   font-size: 15px;
   border: 1px solid #361f1f;
   border-radius: 190px;
-  width: 20%;
+  width: 30%;
 }
 
 #register-button {
@@ -259,6 +262,7 @@ Content styles (Main Module)
   border: solid 1px;
 }
 
+.
 .Register {
   font-size: 20px;
   text-decoration: none;
@@ -283,20 +287,29 @@ Content styles (Main Module)
 
 .RecipesForDiets {
   font-size: 20px;
+  padding-top: 20px;
+  font-weight: normal;
 }
+
+.listOfDiets h3 {
+  padding-top:10px;
+
+
+}
+
 
 .recipeImage {
   width: 50%;
 }
+/* listOfDiets component */
 
-.s-button:hover {
+.show-button:hover {
   background-color: lightskyblue;
   cursor: pointer;
   color: black;
 }
 
-.s-button {
-  margin: 15px 0px;
+.show-button {
   background-color: pink;
   color: black;
   padding: 10px 12px;
@@ -305,8 +318,11 @@ Content styles (Main Module)
   font-size: 15px;
   border: 1px solid #747070;
   border-radius: 190px;
-  width: 10%;
+
 }
+/* listOfDiets component */
+
+
 
 /* -------------------------------------
 Footer styles (Main Module)

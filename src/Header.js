@@ -12,7 +12,7 @@ function Header(props) {
             <Link to='/signup' >Sign Up</Link>
           </li>
           <li>
-            <Link to='/login' >Login</Link>
+            <Link to='/user/login' >Login</Link>
           </li>
         </ul>
       </nav>

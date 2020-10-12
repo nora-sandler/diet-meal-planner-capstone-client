@@ -132,7 +132,7 @@ class ListOfDiets extends React.Component {
                         <button type="submit" className="dietDeleteBtn">
                             Delete diet
                                 </button>
-                        <NavLink className='s-button' to="/recipe/add/glutenfree">Show recipes</NavLink>
+                        <NavLink className='show-button' to="/recipe/add/glutenfree">Show recipes</NavLink>
                     </form>
                     <RecipesForDiets dietName="glutenfree" />
                 </li>
@@ -163,7 +163,7 @@ class ListOfDiets extends React.Component {
                         <button type="submit" className="dietDeleteBtn">
                             Delete diet
                                 </button>
-                        <NavLink className='s-button' to="/recipe/add/vegetarian">Show recipes</NavLink>
+                        <NavLink className='show-button' to="/recipe/add/vegetarian">Show recipes</NavLink>
                     </form>
                     <RecipesForDiets dietName="vegetarian" />
                 </li>
@@ -195,7 +195,7 @@ class ListOfDiets extends React.Component {
                         <button type="submit" className="dietDeleteBtn">
                             Delete diet
                                 </button>
-                        <NavLink className='s-button' to="/recipe/add/lacto-ovo-vegetarian">Show recipes</NavLink>
+                        <NavLink className='show-button' to="/recipe/add/lacto-ovo-vegetarian">Show recipes</NavLink>
                     </form>
                     <RecipesForDiets dietName="lacto-ovo-vegetarian" />
                 </li>
@@ -228,7 +228,7 @@ class ListOfDiets extends React.Component {
                         <button type="submit" className="dietDeleteBtn">
                             Delete diet
                                 </button>
-                        <NavLink className='s-button' to="/recipe/add/vegan">Show recipes</NavLink>
+                        <NavLink className='show-button' to="/recipe/add/vegan">Show recipes</NavLink>
                     </form>
                     <RecipesForDiets dietName="vegan" />
                 </li>
@@ -262,7 +262,7 @@ class ListOfDiets extends React.Component {
                         <button type="submit" className="dietDeleteBtn">
                             Delete diet
                                 </button>
-                        <NavLink className='s-button' to="/recipe/add/pescatarian">Show recipes</NavLink>
+                        <NavLink className='show-button' to="/recipe/add/pescatarian">Show recipes</NavLink>
                     </form>
                     <RecipesForDiets dietName="pescatarian" />
                 </li>
@@ -301,7 +301,7 @@ class ListOfDiets extends React.Component {
                         <button type="submit" className="dietDeleteBtn">
                             Delete diet
                                 </button>
-                        <NavLink className='s-button' to="/recipe/add/paleolithic">Show recipes</NavLink>
+                        <NavLink className='show-button' to="/recipe/add/paleolithic">Show recipes</NavLink>
                     </form>
                     <RecipesForDiets dietName="paleolithic" />
                 </li>
@@ -333,7 +333,7 @@ class ListOfDiets extends React.Component {
                         <button type="submit" className="dietDeleteBtn">
                             Delete diet
                                 </button>
-                        <NavLink className='s-button' to="/recipe/add/primal">Show recipes</NavLink>
+                        <NavLink className='show-button' to="/recipe/add/primal">Show recipes</NavLink>
                     </form>
                     <RecipesForDiets dietName="primal" />
                 </li>
@@ -365,7 +365,7 @@ class ListOfDiets extends React.Component {
                         <button type="submit" className="dietDeleteBtn">
                             Delete diet
                                 </button>
-                        <NavLink className='s-button' to="/recipe/add/calorie">Show recipes</NavLink>
+                        <NavLink className='show-button' to="/recipe/add/calorie">Show recipes</NavLink>
                     </form>
                     <RecipesForDiets dietName="calorie" />
                 </li>
@@ -397,7 +397,7 @@ class ListOfDiets extends React.Component {
                         <button type="submit" className="dietDeleteBtn">
                             Delete diet
                                 </button>
-                        <NavLink className='s-button' to="/recipe/add/protein">Show recipes</NavLink>
+                        <NavLink className='show-button' to="/recipe/add/protein">Show recipes</NavLink>
                     </form>
                     <RecipesForDiets dietName="protein" />
                 </li>
@@ -431,7 +431,7 @@ class ListOfDiets extends React.Component {
                                 foods made from them (or that may have been
                                 cross contaminated).
                             </p>
-                            <NavLink className='s-button' to="/recipe/add/glutenfree">Show recipes</NavLink>
+                            <NavLink className='show-button' to="/recipe/add/glutenfree">Show recipes</NavLink>
                             <RecipesForDiets dietName="glutenfree" />
                         </li>
                         <li>
@@ -440,7 +440,7 @@ class ListOfDiets extends React.Component {
                                 No ingredients may contain meat or meat
                                 by-products, such as bones or gelatin.
                             </p>
-                            <NavLink className='s-button' to="/recipe/add/vegetarian">Show recipes</NavLink>
+                            <NavLink className='show-button' to="/recipe/add/vegetarian">Show recipes</NavLink>
                             <RecipesForDiets dietName="vegetarian" />
                         </li>
                         <li>
@@ -450,7 +450,7 @@ class ListOfDiets extends React.Component {
                                 All ingredients must be vegetarian and none of
                                 the ingredients can be or contain egg.
                             </p>
-                            <NavLink className='s-button' to="/recipe/add/lacto-ovo-vegetarian">Show recipes</NavLink>
+                            <NavLink className='show-button' to="/recipe/add/lacto-ovo-vegetarian">Show recipes</NavLink>
                             <RecipesForDiets dietName="lacto-ovo-vegetarian" />
                         </li>
                         <li>
@@ -461,7 +461,7 @@ class ListOfDiets extends React.Component {
                                 by-products, such as bones or gelatin, nor may
                                 they contain eggs, dairy, or honey.
                             </p>
-                            <NavLink className='s-button' to="/recipe/add/vegan">Show recipes</NavLink>
+                            <NavLink className='show-button' to="/recipe/add/vegan">Show recipes</NavLink>
                             <RecipesForDiets dietName="vegan" />
                         </li>
                         <li>
@@ -473,7 +473,7 @@ class ListOfDiets extends React.Component {
                                 by-products - some pescetarians eat eggs and
                                 dairy, some do not.
                             </p>
-                            <NavLink className='s-button' to="/recipe/add/pescatarian">Show recipes</NavLink>
+                            <NavLink className='show-button' to="/recipe/add/pescatarian">Show recipes</NavLink>
                             <RecipesForDiets dietName="pescatarian" />
                         </li>
                         <li>
@@ -490,7 +490,7 @@ class ListOfDiets extends React.Component {
                                 legumes (e.g. beans and lentils), grains, dairy,
                                 refined sugar, and processed foods.
                             </p>
-                            <NavLink className='s-button' to="/recipe/add/paleolithic">Show recipes</NavLink>
+                            <NavLink className='show-button' to="/recipe/add/paleolithic">Show recipes</NavLink>
                             <RecipesForDiets dietName="paleolithic" />
                         </li>
                         <li>
@@ -500,7 +500,7 @@ class ListOfDiets extends React.Component {
                                 Very similar to Paleo, except dairy is allowed -
                                 think raw and full fat milk, butter, ghee, etc.
                             </p>
-                            <NavLink className='s-button' to="/recipe/add/primal">Show recipes</NavLink>
+                            <NavLink className='show-button' to="/recipe/add/primal">Show recipes</NavLink>
                             <RecipesForDiets dietName="primal" />
                         </li>
                         <li>
@@ -511,7 +511,7 @@ class ListOfDiets extends React.Component {
                                 The average woman needs to eat about 2,000 calories per day to maintain her weight, and 1,500 calories per day to lose one pound of weight per week.
                                 Meanwhile, the average man needs 2,500 calories to maintain, and 2,000 to lose one pound of weight per week.
                             </p>
-                            <NavLink className='s-button' to="/recipe/add/calorie">Show recipes</NavLink>
+                            <NavLink className='show-button' to="/recipe/add/calorie">Show recipes</NavLink>
                             <RecipesForDiets dietName="calorie" />
                         </li>
                         <li>
@@ -523,7 +523,7 @@ class ListOfDiets extends React.Component {
                                 You can try it by adding some extra protein to your meals. Give yourself a week, boosting protein gradually.
                                 Remember, calories still count. You'll want to make good choices when you pick your protein.
                             </p>
-                            <NavLink className='s-button' to="/recipe/add/protein">Show recipes</NavLink>
+                            <NavLink className='show-button' to="/recipe/add/protein">Show recipes</NavLink>
                             <RecipesForDiets dietName="protein" />
                         </li>
                     </ul>
