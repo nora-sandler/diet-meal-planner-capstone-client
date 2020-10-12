@@ -90,7 +90,6 @@ class Login extends React.Component {
     render() {
         return (
             <div className="Login">
-                <Header />
                 <section id="loginPage">
                     <form className="loginForm" onSubmit={this.loginUser}>
                         <h2>Login</h2>
@@ -135,7 +134,7 @@ class Login extends React.Component {
                         <div className="signUp">
                             <p>
                                 Do not have an account?{" "}
-                                <a href="/">Sign up here</a>
+                                <a href="/signup">Sign up here</a>
                             </p>
                         </div>
                     </form>

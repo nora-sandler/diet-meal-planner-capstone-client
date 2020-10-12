@@ -4,6 +4,7 @@ import Header from "./Header";
 import TokenService from "./services/token-service.js";
 import config from "./config";
 import { NavLink } from 'react-router-dom';
+import './component.css';
 
 
 class ListOfDiets extends React.Component {
@@ -416,7 +417,7 @@ class ListOfDiets extends React.Component {
                     <h3>Choose your diet</h3>
                     <p>
                         Our diet list includes variety of diets and allows to
-                        choose tde diet you would like to follow or already
+                        choose the diet you would like to follow or already
                         following.
                     </p>
                 </div>

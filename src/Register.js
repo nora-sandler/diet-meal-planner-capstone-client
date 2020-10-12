@@ -125,10 +125,11 @@ class Register extends React.Component {
     render() {
         return (
             <div className="Register">
-                <Header />
+
                 <section id="signUpPage">
+                <h2>Sign up</h2>
                     <form className="registerForm" onSubmit={this.registerUser}>
-                        <h2>Sign up</h2>
+                        
                         <label htmlFor="username">Username</label>
                         <input
                             type="text"
@@ -139,6 +140,7 @@ class Register extends React.Component {
                             }
                             required
                         />
+                       
                         {this.state.userName.touched && (
                             <ValidationError
                                 message={this.validateUserName()}
@@ -155,6 +157,7 @@ class Register extends React.Component {
                             }
                             required
                         />
+                        
                         {this.state.password.touched && (
                             <ValidationError
                                 message={this.validatePassword()}
@@ -171,6 +174,7 @@ class Register extends React.Component {
                             }
                             required
                         />
+                         
                         {this.state.repeatPassword.touched && (
                             <ValidationError
                                 message={this.validateRepeatPassword()}
@@ -179,6 +183,7 @@ class Register extends React.Component {
 
                         <button
                             className="signup-button"
+                            id="register-button"
                             type="submit"
                             disabled={this.state.submitButtonDisabled}
                         >
