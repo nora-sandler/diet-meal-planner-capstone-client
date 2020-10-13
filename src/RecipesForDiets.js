@@ -100,7 +100,7 @@ class RecipesForDiets extends React.Component {
             // display recipeDetails to the page
             showRecipePage =
                 <div className="RecipesForDiets">
-                    <h3>Recipes</h3>
+                    <h4>Recipes</h4>
                     {existingRecipes}
                 </div>
         }

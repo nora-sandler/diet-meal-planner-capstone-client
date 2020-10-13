@@ -33,7 +33,6 @@ body {
   font-family: 'aglet-slab', sans-serif;
   text-align: center;
   font-size: normal;
-  
 }
 
 /* Full-width input fields */
@@ -113,8 +112,8 @@ h3 {
   font-family: skolar-sans-latin-extended, sans-serif;
   font-style: normal;
   font-weight: 900;
-  font-size: 2.25rem;
-  color: #4B6182;
+  font-size: 2rem;
+  color: #292d33;
 }
 
 h5 {
@@ -150,19 +149,22 @@ header {
   padding: 14px;
   border-bottom: 1px solid lightgrey;
   display: block;
-  
 }
-header nav{
+
+header nav {
   display: block;
   width: 100%;
 }
+
 header nav ul {
   list-style-type: none;
 }
+
 header nav ul li {
   display: inline-block;
   width: auto;
 }
+
 #root {
   margin: 0 !important;
   padding: 0 !important;
@@ -262,8 +264,7 @@ Content styles (Main Module)
   border: solid 1px;
 }
 
-.
-.Register {
+. .Register {
   font-size: 20px;
   text-decoration: none;
   color: black;
@@ -274,7 +275,7 @@ Content styles (Main Module)
 .Register form {
   width: 40%;
   text-align: left;
-  margin: 0 0 25% 35%;
+  margin: 20px auto;
 }
 
 .Register input {
@@ -291,16 +292,40 @@ Content styles (Main Module)
   font-weight: normal;
 }
 
-.listOfDiets h3 {
-  padding-top:10px;
-
-
+#listOfDiets {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
 }
 
+#listOfDiets div {
+  margin-bottom: 30px;
+}
+
+#listOfDiets div ul {
+  list-style-type: none;
+}
+
+#listOfDiets div ul li {
+  border-bottom: 1px solid grey;
+  padding-bottom: 20px;
+  margin-top: 20px;
+}
+
+#listOfDiets div ul li .RecipesForDiets li {
+  border-bottom: 0;
+  background-color: #eee;
+  padding: 15px;
+}
+#listOfDiets div ul li .RecipesForDiets li p {
+  font-size: 70%;
+}
 
 .recipeImage {
   width: 50%;
 }
+
 /* listOfDiets component */
 
 .show-button:hover {
@@ -318,11 +343,9 @@ Content styles (Main Module)
   font-size: 15px;
   border: 1px solid #747070;
   border-radius: 190px;
-
 }
+
 /* listOfDiets component */
-
-
 
 /* -------------------------------------
 Footer styles (Main Module)

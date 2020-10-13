@@ -414,7 +414,7 @@ class ListOfDiets extends React.Component {
         return (
             <section id="listOfDiets">
                 <div className="listOfDiets">
-                    <h3>Choose your diet</h3>
+                    <h2>Choose your diet</h2>
                     <p>
                         Our diet list includes variety of diets and allows to
                         choose the diet you would like to follow or already

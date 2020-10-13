@@ -10,7 +10,7 @@ class AddRecipes extends React.Component {
             recipesFound: [],
             params: {},
             response: [],
-            selectedDietName:''
+            selectedDietName: ''
 
         };
     }
@@ -60,7 +60,7 @@ class AddRecipes extends React.Component {
 
         let user_id = 1;
 
-        let { spoonacular_id, recipe_name, recipe_img, selectedDietName} = data;
+        let { spoonacular_id, recipe_name, recipe_img, selectedDietName } = data;
         // console.log(spoonacular_id, recipe_name, recipe_img)
         let payload = {
             user_id: user_id,
@@ -69,7 +69,7 @@ class AddRecipes extends React.Component {
             recipe_img: recipe_img,
 
         }
-        
+
         const dietName = selectedDietName
 
         // console.log(payload)
@@ -99,14 +99,22 @@ class AddRecipes extends React.Component {
 
                     .then((recipeDetailsData) => {
                         console.log(recipeDetailsData)
-                        // console.log(recipeDetailsData[0].analyzedInstructions[0].steps[0].equipment)
-                        let equipment_string = recipeDetailsData[0].analyzedInstructions[0].steps[0].equipment.map(item =>{
-                           return item.name
-                        })
-                        
+                        console.log(recipeDetailsData[0].analyzedInstructions.length)
+                        let equipment_string = 'No details'
+                        if (recipeDetailsData[0].analyzedInstructions.length > 0) { 
+                            equipment_string = recipeDetailsData[0].analyzedInstructions[0].steps[0].equipment.map(item => {
+                                return item.name
+                            })
+                        }
+                        console.log(equipment_string)
+
+                        let instructionString = "No details"
+                        if (recipeDetailsData[0].instructions ) { 
+                            instructionString = recipeDetailsData[0].instructions
+                        }
                         let recipeDetailsPayload =
                         {
-                            recipe_id:responseJson.id,
+                            recipe_id: responseJson.id,
                             spoonacular_id: recipeDetailsData[0].id,
                             diet_name: dietName,
                             recipe_name: recipeDetailsData[0].title,
@@ -114,7 +122,7 @@ class AddRecipes extends React.Component {
                             recipe_ingredients: recipeDetailsData[0].extendedIngredients[0].original,
                             nutrition_info: recipeDetailsData[0].nutrition.caloricBreakdown,
                             recipe_equipment: equipment_string,
-                            recipe_instruction: recipeDetailsData[0].instructions
+                            recipe_instruction: instructionString
                         }
 
                         console.log(recipeDetailsPayload)
@@ -128,9 +136,9 @@ class AddRecipes extends React.Component {
                             body: JSON.stringify(recipeDetailsPayload),
                         })
                             .then(response => {
-                                // console.log("response", response)
+                                console.log("response", response)
                                 // window.location = `/diet/show`
-                                
+
                             })
                             .catch(err => {
                                 console.log(err);
