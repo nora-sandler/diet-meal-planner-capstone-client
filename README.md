@@ -2,7 +2,7 @@
 For people who are following diets restrictions and need new ideas on recipes.
 
 ## Working Prototype (to do later)
-(Example) You can access a working prototype of the React app here: https://your-app-client.herokuapp.com/ and Node app here: https://your-app-server.herokuapp.com/
+(Example) You can access a working prototype of the React app here: https://diet-meal-planner.vercel.app/ and Node app here: https://diet-meal-planner.herokuapp.com/
 
 
 ## User Stories (to do now)

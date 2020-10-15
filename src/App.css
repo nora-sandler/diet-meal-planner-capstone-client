@@ -460,6 +460,9 @@ place all the mobile tables styles below this line
   body {
     border: 3px solid green;
   }
+  a {
+    padding: 5px;
+}
 }
 
 /*iPhone portrait*/
