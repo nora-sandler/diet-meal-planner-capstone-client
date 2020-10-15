@@ -137,7 +137,7 @@ class AddRecipes extends React.Component {
                         })
                             .then(response => {
                                 console.log("response", response)
-                                // window.location = `/diet/show`
+                                window.location = `/diet/show`
 
                             })
                             .catch(err => {
@@ -149,8 +149,6 @@ class AddRecipes extends React.Component {
                     .catch((err) => {
                         console.log(err);
                     });
-                ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-                // window.location = `recipe/add/${data.spoonacular_id}` 
             })
 
             .catch(err => {
@@ -195,7 +193,6 @@ class AddRecipes extends React.Component {
         })
         return (
             <div className="AddRecipes">
-                <Header />
                 <section id="AddRecipesPage">
                     <div className="listOfMeals">
                         <h2>Choose your meal</h2>
@@ -203,7 +200,6 @@ class AddRecipes extends React.Component {
                             Discover variety of delicious recipes to cook and
                             enjoy!
                         </p>
-                        <h2>List of recipes</h2>
                         <ul>
                             {foundRecipes}
                         </ul>

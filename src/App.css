@@ -255,16 +255,16 @@ Content styles (Main Module)
 }
 
 .Login form {
-  width: 40%;
+  width: 90%;
   text-align: left;
-  margin: 0 0 25% 35%;
+  margin: 20px auto;
 }
 
 .Login input {
   border: solid 1px;
 }
 
-. .Register {
+.Register {
   font-size: 20px;
   text-decoration: none;
   color: black;
@@ -273,7 +273,7 @@ Content styles (Main Module)
 }
 
 .Register form {
-  width: 40%;
+  width: 90%;
   text-align: left;
   margin: 20px auto;
 }
@@ -318,12 +318,16 @@ Content styles (Main Module)
   background-color: #eee;
   padding: 15px;
 }
+
 #listOfDiets div ul li .RecipesForDiets li p {
   font-size: 70%;
 }
 
 .recipeImage {
   width: 50%;
+  /* border-bottom: 5px solid grey;
+  padding-bottom: 20px;
+  margin-top: 20px; */
 }
 
 /* listOfDiets component */
@@ -346,6 +350,42 @@ Content styles (Main Module)
 }
 
 /* listOfDiets component */
+
+/* AddRecipes component */
+
+#AddRecipesPage {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+}
+
+.listOfMeals h2 {
+  margin-bottom: 20px;
+}
+
+#AddRecipesPage div p {
+  color: rgb(15, 12, 13);
+  font-size: 20px;
+}
+
+.listOfMeals ul {
+  list-style-type: none;
+}
+
+.listOfMeals div ul li {
+  border-bottom: 1px solid grey;
+  padding-bottom: 20px;
+  margin-top: 20px;
+}
+
+.AddRecipes form {
+  border-bottom: 1px solid grey;
+  padding-bottom: 20px;
+  margin-top: 20px;
+}
+
+/* AddRecipes component */
 
 /* -------------------------------------
 Footer styles (Main Module)
