@@ -1,12 +1,9 @@
 import React from 'react';
-import ReactDOM from "react-dom"
 import { Route } from 'react-router-dom';
 import './App.css';
 import Landing from './Landing'
 import AddRecipes from './AddRecipes';
-import HowItWorks from './HowItWorks';
 import ListOfDiets from './ListOfDiets';
-import RecipeDetails from './RecipeDetails'
 import Login from './Login'
 import Register from './Register';
 // import WeeklyCalendar from './WeeklyCalendar'
@@ -26,12 +23,6 @@ class App extends React.Component {
         <Route path='/diet/show/' component={ListOfDiets} />
 
         <Route path='/recipe/add/:dietName' component={AddRecipes} />
-
-        {/* <Route path='/recipe-details/:recipeId' component={RecipeDetails} /> */}
-
-        {/* <Route path='/weekly-calendar/' component={WeeklyCalendar} /> */}
-
-
       </div>
     );
   }

@@ -1,6 +1,4 @@
 import React from "react";
-import Header from "./Header";
-import TokenService from "./services/token-service.js";
 import config from "./config";
 
 class AddRecipes extends React.Component {
@@ -162,7 +160,7 @@ class AddRecipes extends React.Component {
             let imgUrl = `https://spoonacular.com/recipeImages/${recipe.image}`
             return (
                 <li key={recipe.id}>
-                    <a href={recipe.sourceUrl} target='_blank'>
+                    <a href={recipe.sourceUrl} target='_blank' rel="noopener noreferrer">
                         <h3>
                             {recipe.title}
                         </h3>

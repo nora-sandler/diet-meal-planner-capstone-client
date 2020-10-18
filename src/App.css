@@ -452,6 +452,11 @@ place all the mobile tables styles below this line
   body {
     border: 3px solid brown;
   }
+  button{ 
+    padding: 15px 5px;
+    font-size: 14px;
+    width: 30%;
+  }
 }
 
 /*iPhone landscape*/

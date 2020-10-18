@@ -1,9 +1,8 @@
 import React from "react";
 import "./App.css";
 import Footer from "./Footer";
-import Login from "./Login";
 import Header from "./Header";
-import Register from "./Register";
+
 
 class Landing extends React.Component {
   render() {

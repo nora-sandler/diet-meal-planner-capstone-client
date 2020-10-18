@@ -1,5 +1,4 @@
 import React from "react";
-import Header from "./Header";
 import ValidationError from './validationError'
 import AuthApiService from './services/auth-api-service';
 import TokenService from './services/token-service.js';

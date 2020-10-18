@@ -1,8 +1,6 @@
 import React from "react";
-import Header from "./Header";
-import TokenService from "./services/token-service.js";
 import config from "./config";
-import { NavLink } from 'react-router-dom';
+
 
 
 class RecipesForDiets extends React.Component {
@@ -57,7 +55,7 @@ class RecipesForDiets extends React.Component {
                 // })
                 let filterRecipesByDietName = recipesInList.filter((recipe) => {
 
-                    return (recipe.diet_name == this.props.dietName) 
+                    return (recipe.diet_name === this.props.dietName) 
 
             
                 })
@@ -77,7 +75,7 @@ class RecipesForDiets extends React.Component {
         // console.log(this.state.recipesByUserId.length)
         let showRecipePage = ''
         //by default show there are no recipes 
-        if (this.state.recipesByUserId.length == 0) { 
+        if (this.state.recipesByUserId.length === 0) { 
         showRecipePage =
             <div className="RecipesForDiets">
                 No recipes here
