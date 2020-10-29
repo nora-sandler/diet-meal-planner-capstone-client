@@ -49,11 +49,11 @@ This app is for two types of users: a visitor and a logged-in user
 * So I can save them in my account.
 
 
-### User calendar page
+<!-- ### User calendar page
 * As a registered user
 * I want to add chosen recipes into the '7-day calendar' inside the app.
 * So that I can plan my weekly meal.
-
+ -->
 
 
 ### Wireframes (to do now)
@@ -87,11 +87,21 @@ Weekly calendar Page
 
 
 ## Screenshots (to do later)
-(Example) Landing Page
+Landing Page
 :-------------------------:
-![Landing Page](/github-images/screenshots/landing-page-screenshot.png)
+![Landing Page](/github-images/screenshots/Landing_page.png)
 Register Page
-![Register Page](/github-images/screenshots/register-page-screenshot.png)
+![Register Page](/github-images/screenshots/Signup.png)
+Login Page
+![Login Page](/github-images/screenshots/Login.png)
+Recipes list Page
+![Recipes list Page](/github-images/screenshots/recipes.png)
+Recipe details Page
+![Recipe details Page](/github-images/screenshots/recipes_details.png)
+Added recipes Page
+![Added recipes Page](/github-images/screenshots/recipes_details.png)
+
+
 
 ## Functionality (to do now)
 The app's functionality includes:
@@ -108,32 +118,17 @@ The app's functionality includes:
 * Development Environment: Heroku, DBeaver
 
 
-## Front-end Structure - React Components Map (to do later)
-* (Example) __Index.js__ (stateless)
+## Front-end Structure - React Components Map 
+*  __Index.js__ (stateless)
     * __App.js__ (stateful)
-        * __LandingPage.js__ (stateful) - gets the _"prop name"_ and the _"callback prop name"_ from the __App.js__
-            * __Navbar.js__ (stateless) -
+        * __LandingPage.js__ (stateless) - gets the _"prop name"_ and the _"callback prop name"_ from the __App.js__
             * __Login.js__ (stateful) -
             * __Register.js__ (stateful) -
             * __Footer.js__ (stateless) -
-        * __HowItWorks.js__ (stateless) -
-            * __Navbar.js__ (stateless) -
-            * __Footer.js__ (stateless) -
-        * __listOfDiets.js__(stateful) -
-            * __Navbar.js__ (stateless) -
-            * __Footer.js__ (stateless) -
+        * __ListOfDiets.js__(stateful) -
         * __AddRecipesPage.js__(stateful) -
-            * __Navbar.js__ (stateless) -
-            * __Footer.js__ (stateless) -
-        * __recipesDetailsPage.js__(stateful) -
-            * __Navbar.js__ (stateless) -
-            * __Footer.js__ (stateless) -
-        * __weeklyCalendarPage.js__(stateless) -
-            * __Navbar.js__ (stateless) -
-            * __Footer.js__ (stateless) -
+        * __RecipesForsDiets.js__(stateful) -
 
-        
-        
 
 
 ## Back-end Structure - Business Objects (to do later)
@@ -144,7 +139,6 @@ The app's functionality includes:
 
 * Recipes (database table)
     * id (auto-generated)
-    <!-- * diet_name (varchar 255) -->
     * recipe_name (varchar 255)
     * recipe_img 
 
@@ -159,19 +153,58 @@ The app's functionality includes:
     * recipe_instruction (varchar 255)
 
 
-## API Documentation (to do later)
+## API Documentation 
 API Documentation details:
-* (Example) get all users
+API TOKEN Authorization required
+* local API search recipes 
+    * http://localhost:8000/api/recipe-by-diet-api-data/keto
+* get recipe details 
+    * http://localhost:8000/api/recipe-details/
+* register user
+    * http://localhost:8000/api/users
+* login user
+    * http://localhost:8000/api/auth/login
+* post recipe
+    * http://localhost:8000/api/recipes
+* post recipe details
+    * http://localhost:8000/api/auth/login
+* delete recipe details
+    * http://localhost:8000/api/recipe-details/3
+* delete recipe
+    * http://localhost:8000/api/recipes/2
+* get recipe
+    * http://localhost:8000/api/recipes
+* get diets by user id
+    * http://localhost:8000/api/recipes/diets-by-user-id/1
+* get recipes by  diet and  by user id
+    * http://localhost:8000/api/recipes/recipes-by-user-id/1
+
 
 ## Responsive (done)
 App is built to be usable on mobile devices, as well as responsive across mobile, tablet, laptop, and desktop screen resolutions.
 
-## Development Roadmap (to do later)
+## Development Roadmap (done)
 This is v1.0 of the app, but future enhancements are expected to include:
-* (Example) add more functionality
+* Weekly calendar - in order to map recipes based on the calendar.
+* Add more specialized diets (dairy free, )
+* Add screenshots of the app for explanatory purpose on the dashboard.
 
 ## How to run it (done)
 Use command line to navigate into the project folder and run the following in terminal
+
+Local React scripts
+
+To install the react project ===> npm install
+To run react (on port 3000) ===> npm start
+To run tests ===> npm run test
+
+Local Node scripts
+
+To install the node project ===> npm install
+To migrate the database ===> npm run migrate -- 1
+To run Node server (on port 8000) ===> npm run dev
+To run tests ===> npm run test
+
 
 ### Local Node scripts
 * To install the node project ===> npm install
