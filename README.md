@@ -95,11 +95,11 @@ Register Page
 Login Page
 ![Login Page](/github-images/screenshots/Login.png)
 Recipes list Page
-![Recipes list Page](/github-images/screenshots/recipes.png)
+![Recipes list Page](/github-images/screenshots/Recipes.png)
 Recipe details Page
-![Recipe details Page](/github-images/screenshots/recipes_details.png)
+![Recipe details Page](/github-images/screenshots/Recipes_details.png)
 Added recipes Page
-![Added recipes Page](/github-images/screenshots/recipes_details.png)
+![Added recipes Page](/github-images/screenshots/Added_recipes.png)
 
 
 
