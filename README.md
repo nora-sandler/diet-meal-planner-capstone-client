@@ -97,7 +97,7 @@ Login Page
 Recipes list Page
 ![Recipes list Page](/github-images/screenshots/Recipes.png)
 Recipe details Page
-![Recipe details Page](/github-images/screenshots/Recipes_details.png)
+![Recipe details Page](/github-images/screenshots/Recipe_details.png)
 Added recipes Page
 ![Added recipes Page](/github-images/screenshots/Added_recipes.png)
 
