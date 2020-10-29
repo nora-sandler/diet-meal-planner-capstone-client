@@ -86,7 +86,7 @@ Weekly calendar Page
 
 
 
-## Screenshots (to do later)
+## Screenshots 
 Landing Page
 :-------------------------:
 ![Landing Page](/github-images/screenshots/Landing_page.png)
