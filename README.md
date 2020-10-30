@@ -131,7 +131,7 @@ The app's functionality includes:
 
 
 
-## Back-end Structure - Business Objects (to do later)
+## Back-end Structure - Business Objects 
 * Users (database table)
     * id (auto-generated)
     * username (email validation)
