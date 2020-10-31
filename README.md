@@ -1,11 +1,11 @@
-# Diet Meal Planner (to do now)
+# Diet Meal Planner 
 For people who are following diets restrictions and need new ideas on recipes.
 
-## Working Prototype (to do later)
+## Working Prototype 
 (Example) You can access a working prototype of the React app here: https://diet-meal-planner.vercel.app/ and Node app here: https://diet-meal-planner.herokuapp.com/
 
 
-## User Stories (to do now)
+## User Stories 
 This app is for two types of users: a visitor and a logged-in user
 
 #### Landing Page
@@ -13,15 +13,6 @@ This app is for two types of users: a visitor and a logged-in user
 * I want to understand what I can do with this app (or sign up, or log in)
 * so I can decide if I want to use it
 
-### How it works page
-* As a visitor
-* I want to understand what I can do with this app (or sign up, or log in)
-* so I can decide if I want to use it
-
-### Login page
-* As a visitor 
-* I want to log in to the website 
-* So that I can use the dashboard of the app.
 
 ### Register page
 * As visitor 
@@ -56,7 +47,7 @@ This app is for two types of users: a visitor and a logged-in user
  -->
 
 
-### Wireframes (to do now)
+### Wireframes 
 (Example) Landing Page
 :-------------------------:
 ![Landing Page](/github-images/wireframes/landing_page.jpg)
@@ -80,12 +71,6 @@ Weekly calendar Page
 ![Weekly calendar Page](/github-images/wireframes/weekly_calendar_page.jpg)
 
 
-
-
-
-
-
-
 ## Screenshots 
 Landing Page
 :-------------------------:
@@ -103,7 +88,7 @@ Added recipes Page
 
 
 
-## Functionality (to do now)
+## Functionality 
 The app's functionality includes:
 * Every User has the ability to create an account
 * Every User has the ability to login into the account
@@ -112,22 +97,22 @@ The app's functionality includes:
 * Every User has the ability to layout recipes on weekly calendar 
 
 
-## Technology (done)
+## Technology 
 * Front-End: HTML5, CSS3, JavaScript ES6, React
 * Back-End: Node.js, Express.js, Mocha, Chai, RESTful API Endpoints, Postgres
 * Development Environment: Heroku, DBeaver
 
 
 ## Front-end Structure - React Components Map 
-*  __Index.js__ (stateless)
-    * __App.js__ (stateful)
-        * __LandingPage.js__ (stateless) - gets the _"prop name"_ and the _"callback prop name"_ from the __App.js__
-            * __Login.js__ (stateful) -
-            * __Register.js__ (stateful) -
-            * __Footer.js__ (stateless) -
-        * __ListOfDiets.js__(stateful) -
-        * __AddRecipesPage.js__(stateful) -
-        * __RecipesForsDiets.js__(stateful) -
+*  __Index.js__ 
+    * __App.js__ 
+        * __LandingPage.js__ 
+            * __Login.js__ 
+            * __Register.js__ 
+            * __Footer.js__ 
+        * __ListOfDiets.js__
+        * __AddRecipesPage.js__
+        * __RecipesForsDiets.js__
 
 
 
@@ -180,16 +165,16 @@ API TOKEN Authorization required
     * http://localhost:8000/api/recipes/recipes-by-user-id/1
 
 
-## Responsive (done)
+## Responsive 
 App is built to be usable on mobile devices, as well as responsive across mobile, tablet, laptop, and desktop screen resolutions.
 
-## Development Roadmap (done)
+## Development Roadmap 
 This is v1.0 of the app, but future enhancements are expected to include:
 * Weekly calendar - in order to map recipes based on the calendar.
 * Add more specialized diets (dairy free, )
 * Add screenshots of the app for explanatory purpose on the dashboard.
 
-## How to run it (done)
+## How to run it 
 Use command line to navigate into the project folder and run the following in terminal
 
 Local React scripts
