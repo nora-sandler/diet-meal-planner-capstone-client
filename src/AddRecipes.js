@@ -1,5 +1,5 @@
-import React from "react";
-import config from "./config";
+import React from "react"
+import config from "./config"
 
 class AddRecipes extends React.Component {
     constructor(props) {

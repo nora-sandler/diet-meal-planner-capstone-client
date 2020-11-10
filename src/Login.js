@@ -1,7 +1,7 @@
-import React from "react";
-import ValidationError from "./validationError";
-import AuthApiService from "./services/auth-api-service";
-import TokenService from "./services/token-service.js";
+import React from "react"
+import ValidationError from "./validationError"
+import AuthApiService from "./services/auth-api-service"
+import TokenService from "./services/token-service.js"
 
 class Login extends React.Component {
     constructor(props) {

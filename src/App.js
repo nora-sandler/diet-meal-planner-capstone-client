@@ -1,11 +1,11 @@
-import React from 'react';
-import { Route } from 'react-router-dom';
-import './App.css';
+import React from 'react'
+import { Route } from 'react-router-dom'
+import './App.css'
 import Landing from './Landing'
-import AddRecipes from './AddRecipes';
-import ListOfDiets from './ListOfDiets';
+import AddRecipes from './AddRecipes'
+import ListOfDiets from './ListOfDiets'
 import Login from './Login'
-import Register from './Register';
+import Register from './Register'
 // import WeeklyCalendar from './WeeklyCalendar'
 
 class App extends React.Component {

@@ -1,7 +1,7 @@
-import React from "react";
+import React from "react"
 import ValidationError from './validationError'
-import AuthApiService from './services/auth-api-service';
-import TokenService from './services/token-service.js';
+import AuthApiService from './services/auth-api-service'
+import TokenService from './services/token-service.js'
 
 
 class Register extends React.Component {

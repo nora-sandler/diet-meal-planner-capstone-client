@@ -1,5 +1,5 @@
-import React from "react";
-import config from "./config";
+import React from "react"
+import config from "./config"
 
 
 
@@ -14,7 +14,7 @@ class RecipesForDiets extends React.Component {
     }
 
     componentDidMount() {
-        console.log(this.props.dietName)
+        // console.log(this.props.dietName)
         this.showUsersRecipesByDiet()
         // let currentUser = TokenService.getUserId();
         let currentUser = 1;
@@ -62,7 +62,7 @@ class RecipesForDiets extends React.Component {
                 this.setState({
                     recipesByUserId: filterRecipesByDietName,
                 });
-                console.log(this.state)
+                // console.log(this.state)
             })
 
             .catch((error) => this.setState({ error }));

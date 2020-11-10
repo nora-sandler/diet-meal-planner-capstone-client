@@ -1,8 +1,8 @@
-import React from "react";
-import RecipesForDiets from "./RecipesForDiets";
-import config from "./config";
-import { NavLink } from 'react-router-dom';
-import './component.css';
+import React from "react"
+import RecipesForDiets from "./RecipesForDiets"
+import config from "./config"
+import { NavLink } from 'react-router-dom'
+import './component.css'
 
 
 class ListOfDiets extends React.Component {
@@ -32,7 +32,7 @@ class ListOfDiets extends React.Component {
             })
 
             .catch((error) => this.setState({ error }));
-        console.log("Stateful component 1 Dashboard successfully mounted.");
+        // console.log("Stateful component 1 Dashboard successfully mounted.");
     }
 
     showUsersRecipesByDiet() {
@@ -51,13 +51,10 @@ class ListOfDiets extends React.Component {
             })
 
             .catch((error) => this.setState({ error }));
-        console.log("Stateful component 2 Dashboard successfully mounted.");
+        // console.log("Stateful component 2 Dashboard successfully mounted.");
     }
 
-    //     // handleSubmit(event) {
-    //     //   console.log('Your diet is: ' + this.state.diets);
-    //     //   event.preventDefault();
-    //     // }
+
 
     deleteDiet(event) {
         event.preventDefault();
