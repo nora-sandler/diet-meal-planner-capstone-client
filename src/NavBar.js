@@ -3,7 +3,7 @@ import TokenService from "./services/token-service.js"
 import { Link } from 'react-router-dom'
 
 
-class navbar extends Component {
+class NavBar extends Component {
 
     logOutClick = () => {
         console.log('Logging out')
@@ -50,4 +50,4 @@ class navbar extends Component {
     }
 }
 
-export default navbar 
+export default NavBar 
