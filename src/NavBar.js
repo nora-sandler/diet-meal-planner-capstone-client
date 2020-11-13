@@ -17,10 +17,9 @@ class NavBar extends Component {
 
     render() {
 
-
         return (
             <header className='clearfix'>
-                <h4>Diet meal planner</h4>
+                <h2>Diet meal planner</h2>
                 {TokenService.hasAuthToken() ?
                     <nav className="nav">
                         <ul className='link'>
