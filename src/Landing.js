@@ -13,12 +13,10 @@ class Landing extends React.Component {
           <section id="landingPage">
             <div id="description">
               {/* <h2>Diet meal planner</h2> */}
-              <h5>Nowadays there are a lot of people who are following different diets
-              for some reasons including medical purpose, weight loss, muscle gain
-              or just for eating healthy. This app is perfect for this purpose. 
-              Just choose the diet you are following and check out all recipes 
-              available for this diet.
-              Save the recipe and you are all set! 
+              <h5>Nowadays there are a lot of people who are following different diets for some reason 
+              including medical purposes, weight loss, muscle gain, or just for eating healthy. 
+              This app is perfect for these goals. Just choose the diet you are following and check out all recipes available for this diet.
+              Save the recipe and you are all set! 
             </h5>
             </div>
           </section>
