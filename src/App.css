@@ -126,8 +126,6 @@ h4 {
   padding-top: 15px;
 }
 
-
-
 h5 {
   font-family: 'aglet-slab', sans-serif;
   font-style: normal;
@@ -137,7 +135,6 @@ h5 {
   color: #373E40;
   padding-top: 15px;
 }
-
 
 p {
   font-family: 'aglet-slab', sans-serif;
@@ -247,7 +244,6 @@ Content styles (Main Module)
   display: block;
 }
 
-
 .go-button:hover {
   /* opacity: 1; */
   background-color: lightskyblue;
@@ -270,6 +266,12 @@ Content styles (Main Module)
 
 .Login h2 {
   padding-bottom: 1em;
+}
+
+.Login .demo {
+  line-height: 1.2rem;
+  font-size: 75%;
+  padding: 0;
 }
 
 .Login form {
@@ -363,16 +365,9 @@ Content styles (Main Module)
   height: 60px;
   display: inline-flex;
   justify-content: flex-end;
-
 }
 
-.nav 
-
-
-
-
 /* NavBar component */
-
 
 /* listOfDiets component */
 
@@ -496,7 +491,7 @@ place all the mobile tables styles below this line
   body {
     border: 3px solid brown;
   }
-  button{ 
+  button {
     padding: 15px 5px;
     font-size: 14px;
     width: 30%;
@@ -511,7 +506,7 @@ place all the mobile tables styles below this line
   }
   a {
     padding: 5px;
-}
+  }
 }
 
 /*iPhone portrait*/
