@@ -3,6 +3,7 @@ import RecipesForDiets from "./RecipesForDiets"
 import config from "./config"
 import { NavLink } from 'react-router-dom'
 import './component.css'
+import TokenService from "./services/token-service"
 
 
 class ListOfDiets extends React.Component {
@@ -15,11 +16,19 @@ class ListOfDiets extends React.Component {
         };
     }
 
+
     componentDidMount() {
         this.showUsersRecipesByDiet()
-        //let currentUser = TokenService.getUserId();
-        let currentUser = 1;
-
+        let currentUser = TokenService.getUserId();
+        // let currentUser = 1;
+        let currentUserToken = TokenService.getAuthToken()
+        // console.log(currentUser, currentUserToken)
+        // console.log(TokenService.hasAuthToken())
+        
+        //if the user is not logged in, send him to landing page
+        if (!TokenService.hasAuthToken()){
+            window.location = '/'
+        }
         let getDietByUserId = `${config.API_ENDPOINT}/recipes/diets-by-user-id/${currentUser}`;
 
         fetch(getDietByUserId)

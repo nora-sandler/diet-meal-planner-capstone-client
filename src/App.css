@@ -101,7 +101,8 @@ h1 {
 h2 {
   /* text-align:center; 
   font-size: 40px; */
-  font-family: 'skolar-sans-latin-extended', sans-serif;
+  /* font-family: 'skolar-sans-latin-extended', sans-serif; */
+  font-family: 'Pacifico', cursive;
   font-style: normal;
   font-weight: 900;
   font-size: 2.25rem;
@@ -360,11 +361,15 @@ Content styles (Main Module)
   margin: 0;
   padding: 13px;
   overflow: hidden;
-  float: right;
+  /* float: right; */
   width: 100%;
-  height: 60px;
-  display: inline-flex;
-  justify-content: flex-end;
+  height: auto;
+  /* display: inline-flex;
+  justify-content: flex-end; */
+}
+
+.nav h2 {
+  font-family: 'Pacifico', cursive;
 }
 
 /* NavBar component */

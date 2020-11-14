@@ -1,6 +1,6 @@
 import React from "react"
 import config from "./config"
-// import TokenService from "./services/token-service.js"
+import TokenService from "./services/token-service.js"
 
 
 
@@ -17,8 +17,16 @@ class RecipesForDiets extends React.Component {
     componentDidMount() {
         // console.log(this.props.dietName)
         this.showUsersRecipesByDiet()
-        // let currentUser = TokenService.getUserId();
-        let currentUser = 1;
+        let currentUser = TokenService.getUserId();
+        // let currentUser = 1;
+        let currentUserToken = TokenService.getAuthToken()
+        // console.log(currentUser, currentUserToken)
+        // console.log(TokenService.hasAuthToken())
+        
+        //if the user is not logged in, send him to landing page
+        if (!TokenService.hasAuthToken()){
+            window.location = '/'
+        }
 
         let getDietByUserId = `${config.API_ENDPOINT}/recipes/diets-by-user-id/${currentUser}`;
 
