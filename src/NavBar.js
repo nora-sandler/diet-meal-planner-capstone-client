@@ -6,10 +6,10 @@ import { Link } from 'react-router-dom'
 class NavBar extends Component {
 
     logOutClick = () => {
-        console.log('Logging out')
+        //console.log('Logging out')
         TokenService.clearAuthToken()
         TokenService.getUserId = (id) => {
-            console.log(id)
+            //console.log(id)
         }
 
         window.location = '/'

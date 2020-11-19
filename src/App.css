@@ -27,7 +27,7 @@ General styles (General Module, wrapping around the modules below)
 */
 
 body {
-  border: 3px solid white;
+  /* border: 3px solid white; */
   margin: 0;
   padding: 0;
   font-family: 'aglet-slab', sans-serif;
@@ -469,33 +469,33 @@ place all the mobile tables styles below this line
 /*large desktop*/
 
 @media only screen and (max-width: 1600px) {
-  body {
+  /* body {
     border: 3px solid yellow;
-  }
+  } */
 }
 
 /*iPad lanscape / small laptop*/
 
 @media only screen and (max-width: 1024px) {
-  body {
+  /* body {
     border: 3px solid blue;
-  }
+  } */
 }
 
 /*iPad potrait*/
 
 @media only screen and (max-width: 768px) {
-  body {
+  /* body {
     border: 3px solid red;
-  }
+  } */
 }
 
 /*Android landscape*/
 
 @media only screen and (max-width: 640px) {
-  body {
+  /* body {
     border: 3px solid brown;
-  }
+  } */
   button {
     padding: 15px 5px;
     font-size: 14px;

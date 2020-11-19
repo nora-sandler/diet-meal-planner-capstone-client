@@ -38,7 +38,7 @@ class ListOfDiets extends React.Component {
                 this.setState({
                     dietsByUserId: dietsInList,
                 });
-                console.log(this.state);
+                //console.log(this.state);
             })
 
             .catch((error) => this.setState({ error }));
@@ -78,10 +78,10 @@ class ListOfDiets extends React.Component {
             data[value[0]] = value[1];
         }
 
-        console.log(data);
+       // console.log(data);
 
         let { dietId } = data;
-        console.log(dietId);
+        //console.log(dietId);
 
 
         fetch(`${config.API_ENDPOINT}/diets/diet/${dietId}`, {

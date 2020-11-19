@@ -33,17 +33,17 @@ class AddRecipes extends React.Component {
         });
         /////////////GET RECIPES FROM THE API/////////////////////////////////////////////////////////////
         let url = `${config.API_ENDPOINT}/recipe-by-diet-api-data/${dietName}`;
-        console.log(url)
+        // console.log(url)
 
         fetch(url)
             .then((response) => response.json())
 
             .then((data) => {
-                console.log(data)
+                //console.log(data)
                 this.setState({
                     recipesFound: data.results
                 });
-                console.log(this.state)
+                //console.log(this.state)
             })
 
             .catch((err) => {
@@ -109,15 +109,15 @@ class AddRecipes extends React.Component {
                     .then((response) => response.json())
 
                     .then((recipeDetailsData) => {
-                        console.log(recipeDetailsData)
-                        console.log(recipeDetailsData[0].analyzedInstructions.length)
+                        //console.log(recipeDetailsData)
+                        //console.log(recipeDetailsData[0].analyzedInstructions.length)
                         let equipment_string = 'No details'
                         if (recipeDetailsData[0].analyzedInstructions.length > 0) { 
                             equipment_string = recipeDetailsData[0].analyzedInstructions[0].steps[0].equipment.map(item => {
                                 return item.name
                             })
                         }
-                        console.log(equipment_string)
+                        //console.log(equipment_string)
 
                         let instructionString = "No details"
                         if (recipeDetailsData[0].instructions ) { 
@@ -136,7 +136,7 @@ class AddRecipes extends React.Component {
                             recipe_instruction: instructionString
                         }
 
-                        console.log(recipeDetailsPayload)
+                        //console.log(recipeDetailsPayload)
                         ////////POST RECIPE_DETAILS//////////////////////////////////////////////////////////
 
                         fetch(`${config.API_ENDPOINT}/recipe-details`, {
@@ -147,7 +147,7 @@ class AddRecipes extends React.Component {
                             body: JSON.stringify(recipeDetailsPayload),
                         })
                             .then(response => {
-                                console.log("response", response)
+                                //console.log("response", response)
                                 window.location = `/diet/show`
 
                             })

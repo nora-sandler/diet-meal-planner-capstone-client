@@ -93,10 +93,10 @@ class Register extends React.Component {
         for (let value of formData) {
             data[value[0]] = value[1];
         }
-        console.log(data);
+       // console.log(data);
 
         let { userName, password, repeatPassword } = data;
-        console.log(userName, password, repeatPassword);
+        //console.log(userName, password, repeatPassword);
         //validate user data
 
       this.setState({ error: null })
@@ -106,7 +106,7 @@ class Register extends React.Component {
       })
   
       .then(response => {
-          console.log('user:', response)
+          //console.log('user:', response)
           // userName.value = ''
           // password.value = ''
           // repeatPassword.value = ''

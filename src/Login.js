@@ -67,14 +67,14 @@ class Login extends React.Component {
     loginUser = (event) => {
         event.preventDefault();
         const { userName, password } = event.target;
-        console.log("username:", userName.value, "password:", password.value);
+        //console.log("username:", userName.value, "password:", password.value);
         AuthApiService.postLogin({
             user_name: userName.value,
             password: password.value,
         })
 
             .then((response) => {
-                console.log("response ID", response);
+               // console.log("response ID", response);
                 // userName.value = "";
                 // password.value = "";
                 TokenService.saveAuthToken(response.authToken);
