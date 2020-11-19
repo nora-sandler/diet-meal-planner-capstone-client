@@ -19,7 +19,7 @@ class RecipesForDiets extends React.Component {
         this.showUsersRecipesByDiet()
         let currentUser = TokenService.getUserId();
         // let currentUser = 1;
-        let currentUserToken = TokenService.getAuthToken()
+        // let currentUserToken = TokenService.getAuthToken()
         // console.log(currentUser, currentUserToken)
         // console.log(TokenService.hasAuthToken())
         
