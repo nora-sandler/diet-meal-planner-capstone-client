@@ -18,6 +18,7 @@ class RecipesForDiets extends React.Component {
         // console.log(this.props.dietName)
         this.showUsersRecipesByDiet()
         let currentUser = TokenService.getUserId();
+        //console.log(currentUser)
         // let currentUser = 1;
         // let currentUserToken = TokenService.getAuthToken()
         // console.log(currentUser, currentUserToken)
@@ -44,9 +45,9 @@ class RecipesForDiets extends React.Component {
     }
 
     showUsersRecipesByDiet() {
-        // let currentUser = TokenService.getUserId();
-        let currentUser = 1;
-
+        let currentUser = TokenService.getUserId();
+        // let currentUser = 1;
+        //console.log(currentUser)
         let getRecipesByUserId = `${config.API_ENDPOINT}/recipes/recipes-by-user-id/${currentUser}`;
 
         fetch(getRecipesByUserId)

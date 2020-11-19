@@ -112,7 +112,7 @@ class Register extends React.Component {
           // repeatPassword.value = ''
           TokenService.saveAuthToken(response.authToken)
           TokenService.saveUserId(response.id)
-          window.location = '/user/login'
+          window.location = "/diet/show/"
       }) 
   
       .catch(res => {

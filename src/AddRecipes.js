@@ -17,8 +17,10 @@ class AddRecipes extends React.Component {
     componentDidMount() {
         const dietName = this.props.match.params.dietName;
         let currentUser = TokenService.getUserId();
+        // console.log(currentUser)
+
         // let currentUser = 1;
-        let currentUserToken = TokenService.getAuthToken()
+        // let currentUserToken = TokenService.getAuthToken()
         // console.log(currentUser, currentUserToken)
         // console.log(TokenService.hasAuthToken())
         
@@ -67,7 +69,7 @@ class AddRecipes extends React.Component {
             data[value[0]] = value[1]
         }
 
-        let user_id = 1;
+        let user_id = TokenService.getUserId();
 
         let { spoonacular_id, recipe_name, recipe_img, selectedDietName } = data;
         // console.log(spoonacular_id, recipe_name, recipe_img)
