@@ -95,7 +95,7 @@ class Register extends React.Component {
         }
        // console.log(data);
 
-        let { userName, password, repeatPassword } = data;
+        let { userName, password} = data;
         //console.log(userName, password, repeatPassword);
         //validate user data
 

@@ -25,19 +25,19 @@ class NavBar extends Component {
                         <ul className='link'>
                             <li>
                                 <Link to="/">
-                                    <i class="fa fa-home"></i>
+                                    <i className="fa fa-home"></i>
                                     <span className='navlink-text'>Home</span>
                                 </Link>
                             </li>
                             <li>
                                 <Link to="/diet/show/">
-                                    <i class="fa fa-list"></i>
+                                    <i className="fa fa-list"></i>
                                     <span className='navlink-text'>List of diets</span>
                                 </Link>
                             </li>
                             <li>
                                 <Link to="/" onClick={this.logOutClick}>
-                                    <i class="fa fa-sign-out"></i>
+                                    <i className="fa fa-sign-out"></i>
                                     <span className='navlink-text'>Log Out</span>
                                 </Link>
                             </li>

@@ -19,10 +19,7 @@ class RecipesForDiets extends React.Component {
         this.showUsersRecipesByDiet()
         let currentUser = TokenService.getUserId();
         //console.log(currentUser)
-        // let currentUser = 1;
-        // let currentUserToken = TokenService.getAuthToken()
-        // console.log(currentUser, currentUserToken)
-        // console.log(TokenService.hasAuthToken())
+
         
         //if the user is not logged in, send him to landing page
         if (!TokenService.hasAuthToken()){
@@ -41,7 +38,7 @@ class RecipesForDiets extends React.Component {
             })
 
             .catch((error) => this.setState({ error }));
-        // console.log("Stateful component 1 Dashboard successfully mounted.");
+
     }
 
     showUsersRecipesByDiet() {
@@ -54,21 +51,11 @@ class RecipesForDiets extends React.Component {
             .then((recipesInList) => recipesInList.json())
             .then((recipesInList) => {
                 // console.log(recipesInList[0].diet_name)
-                // let filterRecipesByDietName = recipesInList.map((recipe, key) => {
-                //     console.log(recipe.diet_name)
-                //     console.log(this.props.dietName)
-                //     let output = ''
-                //     if (recipe.diet_name == this.props.dietName) {
-                //          output = recipe
-                //     }
-                //     return output
-                // })
+
                 let filterRecipesByDietName = recipesInList.filter((recipe) => {
-
                     return (recipe.diet_name === this.props.dietName) 
-
-            
                 })
+                // console.log(filterRecipesByDietName)
                 this.setState({
                     recipesByUserId: filterRecipesByDietName,
                 });
@@ -76,7 +63,7 @@ class RecipesForDiets extends React.Component {
             })
 
             .catch((error) => this.setState({ error }));
-        // console.log("Stateful component 2 Dashboard successfully mounted.");
+
     }
 
 

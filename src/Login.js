@@ -2,7 +2,7 @@ import React from "react"
 import ValidationError from "./validationError"
 import AuthApiService from "./services/auth-api-service"
 import TokenService from "./services/token-service.js"
-import NavBar from './NavBar'
+
 class Login extends React.Component {
     constructor(props) {
         super(props);

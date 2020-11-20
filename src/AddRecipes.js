@@ -16,13 +16,8 @@ class AddRecipes extends React.Component {
 
     componentDidMount() {
         const dietName = this.props.match.params.dietName;
-        let currentUser = TokenService.getUserId();
+        // let currentUser = TokenService.getUserId();
         // console.log(currentUser)
-
-        // let currentUser = 1;
-        // let currentUserToken = TokenService.getAuthToken()
-        // console.log(currentUser, currentUserToken)
-        // console.log(TokenService.hasAuthToken())
         
         //if the user is not logged in, send him to landing page
         if (!TokenService.hasAuthToken()){

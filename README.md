@@ -140,6 +140,113 @@ The app's functionality includes:
 
 ## API Documentation 
 API Documentation details:
+## API Overview
+
+```text
+/api
+.
+├── /auth
+│   └── GET
+│       ├── /google
+│       ├── /google/redirect
+│   └── POST
+│       ├── /login
+│       └── /refresh
+├── /users
+│   └── GET
+│   └── GET /:id
+│   └── POST
+│       └── /
+├── /main
+│   └── GET
+│       ├── /location
+│       ├── /matches/:id
+│       ├── /notifications/:id
+│       ├── /popcorn/:id
+│       └── /profilePicture/:id
+│   └── PUT
+│       ├── /ignore/:id
+│       ├── /ignore/nevermind/:id
+│       ├── /location/:id
+│       ├── /notifications/time/:id
+│       └── /popcorn
+│   └── PUT /:id
+│   └── POST
+│       └── /profilePicture/:id
+```
+
+### POST `/api/auth/login`
+
+```js
+// req.body
+{
+  username: String,
+  password: String
+}
+
+// res.body
+{
+  authToken: String
+}
+```
+
+### POST `/api/auth/refresh`
+
+```js
+// req.header
+Authorization: Bearer ${token}
+
+// res.body
+{
+  authToken: ${token}
+}
+```
+
+### GET `/api/users/`
+
+```js
+// req.query
+{
+  ?
+}
+
+// res.body
+[
+  {
+    username: String,
+    movies: [],
+    genres: String
+  }
+]
+```
+
+### GET `/api/users/:id`
+
+```js
+// req.params
+{
+  id: ID
+}
+
+// res.body
+{
+  username: String,
+  movies: [],
+  genres: String
+}
+```
+
+
+
+
+
+
+
+
+
+
+
+
 API TOKEN Authorization required
 * local API search recipes 
     * http://localhost:8000/api/recipe-by-diet-api-data/keto

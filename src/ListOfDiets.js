@@ -18,31 +18,28 @@ class ListOfDiets extends React.Component {
 
 
     componentDidMount() {
-        this.showUsersRecipesByDiet()
-        let currentUser = TokenService.getUserId();
-        // console.log(currentUser)
-        // let currentUser = 1;
-        // let currentUserToken = TokenService.getAuthToken()
-        // console.log(currentUser, currentUserToken)
-        // console.log(TokenService.hasAuthToken())
+        // this.showUsersRecipesByDiet()
+        // let currentUser = TokenService.getUserId();
+        // // console.log(currentUser)
         
-        //if the user is not logged in, send him to landing page
-        if (!TokenService.hasAuthToken()){
-            window.location = '/'
-        }
-        let getDietByUserId = `${config.API_ENDPOINT}/recipes/diets-by-user-id/${currentUser}`;
+        // //if the user is not logged in, send him to landing page
+        // if (!TokenService.hasAuthToken()){
+        //     window.location = '/'
+        // }
+        // let getDietByUserId = `${config.API_ENDPOINT}/recipes/diets-by-user-id/${currentUser}`;
 
-        fetch(getDietByUserId)
-            .then((dietsInList) => dietsInList.json())
-            .then((dietsInList) => {
-                this.setState({
-                    dietsByUserId: dietsInList,
-                });
-                //console.log(this.state);
-            })
+        // fetch(getDietByUserId)
+        //     .then((dietsInList) => dietsInList.json())
+        //     .then((dietsInList) => {
+        //         console.log(dietsInList)
+        //         this.setState({
+        //             dietsByUserId: dietsInList,
+        //         });
+        //         //console.log(this.state);
+        //     })
 
-            .catch((error) => this.setState({ error }));
-        // console.log("Stateful component 1 Dashboard successfully mounted.");
+        //     .catch((error) => this.setState({ error }));
+        
     }
 
     showUsersRecipesByDiet() {
@@ -55,6 +52,7 @@ class ListOfDiets extends React.Component {
         fetch(getRecipesByUserId)
             .then((recipesInList) => recipesInList.json())
             .then((recipesInList) => {
+                console.log(recipesInList)
                 this.setState({
                     recipesByUserId: recipesInList,
                 });
@@ -62,7 +60,7 @@ class ListOfDiets extends React.Component {
             })
 
             .catch((error) => this.setState({ error }));
-        // console.log("Stateful component 2 Dashboard successfully mounted.");
+        
     }
 
 
