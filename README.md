@@ -146,33 +146,28 @@ API Documentation details:
 /api
 .
 ├── /auth
-│   └── GET
-│       ├── /google
-│       ├── /google/redirect
 │   └── POST
 │       ├── /login
-│       └── /refresh
 ├── /users
-│   └── GET
-│   └── GET /:id
 │   └── POST
 │       └── /
-├── /main
+├── /recipes
 │   └── GET
-│       ├── /location
-│       ├── /matches/:id
-│       ├── /notifications/:id
-│       ├── /popcorn/:id
-│       └── /profilePicture/:id
-│   └── PUT
-│       ├── /ignore/:id
-│       ├── /ignore/nevermind/:id
-│       ├── /location/:id
-│       ├── /notifications/time/:id
-│       └── /popcorn
-│   └── PUT /:id
+│       ├── /
+│       ├── /diets-by-user-id/:id
+│       ├── /recipes-by-user-id/:id
 │   └── POST
-│       └── /profilePicture/:id
+│       └── /
+│   └── DELETE
+│       └── /:id
+├── /recipe-details
+│   └── GET
+│       ├── /
+│   └── POST
+│       └── /
+│   └── DELETE
+│       └── /:id
+
 ```
 
 ### POST `/api/auth/login`
@@ -180,47 +175,57 @@ API Documentation details:
 ```js
 // req.body
 {
-  username: String,
-  password: String
+    "user_name": "demo@gmail.com",
+    "password": "Password1"
 }
 
 // res.body
 {
-  authToken: String
+  "authToken": String,
+    "userId": 1
 }
 ```
 
-### POST `/api/auth/refresh`
+### POST `/api/users/`
 
 ```js
-// req.header
-Authorization: Bearer ${token}
+// req.body
+{
+    "user_name": "demo@gmail.com",
+    "password": "123456"
+}
+
 
 // res.body
 {
-  authToken: ${token}
+    {
+    "id": 1,
+    "user_name": "demo@gmail.com"
+}
 }
 ```
 
-### GET `/api/users/`
+### GET `api/recipes`
 
 ```js
 // req.query
 {
-  ?
+  
 }
 
 // res.body
 [
   {
-    username: String,
-    movies: [],
-    genres: String
+  "id": 1,
+  "user_id": 1,
+  "spoonacular_id": 617586,
+  "recipe_name": "GlutenFree Stir Fried Beef and Broccoli with #McCormickFlavor #AD",
+  "recipe_img": "GlutenFree-Stir-Fried-Beef-and-Broccoli-with--McCormickFlavor--AD-617586.jpg"
   }
 ]
 ```
 
-### GET `/api/users/:id`
+### GET `/api/recipes/diets-by-user-id/:id`
 
 ```js
 // req.params
@@ -229,47 +234,149 @@ Authorization: Bearer ${token}
 }
 
 // res.body
-{
-  username: String,
-  movies: [],
-  genres: String
-}
+[
+    {
+        "diet_name": "glutenfree"
+    }
+]
 ```
 
 
+### GET `/api/recipes/recipes-by-user-id/:id`
 
+```js
+// req.params
+{
+  id: ID
+}
 
+// res.body
+[
+    {
+        "id": 76,
+        "recipe_name": "Cashew-Crusted Salmon with Bok Choy",
+        "recipe_img": "cashew-crusted-salmon-with-bok-choy-736719.jpeg",
+        "spoonacular_id": 736719,
+        "diet_name": "primal",
+        "recipe_ingredients": "Freshly ground black pepper",
+        "nutrition_info": "{\"percentProtein\":37.18,\"percentFat\":46.28,\"percentCarbs\":16.54}",
+        "recipe_equipment": "{\"frying pan\"}",
+        "recipe_instruction": "Heat 1 tablespoon of the oil in a large skillet over medium-high heat. Brush honey mustard all over salmon. Season both sides of salmon with onion flakes and black pepper. Place cashews in a shallow dish, add four of the salmon fillets and turn to coat. Place all salmon fillets in hot skillet and cook 3 minutes per side, until fork-tender.Heat remaining olive oil in separate large skillet over medium heat. Add garlic and cook 1 minute. Add bok choy and cook 2 minutes, until greens wilt but stalks are still crisp-tender. Season, to taste, with salt and pepper. Serve the cashew-crusted salmon with this meal and reserve 2 uncrusted fillets for another meal."
+    }
+]
+```
 
+### POST `/api/recipes`
 
+```js
+// req.body
+{
+    "user_id": 1,
+    "spoonacular_id": 87,
+    "recipe_name": "soup",
+    "recipe_img": "img.jpeg"
 
+}
 
+// res.body
+[
+    {
+    "id": 81,
+    "user_id": 1,
+    "spoonacular_id": 87,
+    "recipe_name": "soup",
+    "recipe_img": "img.jpeg"
+}
+]
+```
 
+### DELETE `/api/recipes/:id`
 
+```js
+// req.query
+{
+  id: ID
+}
 
+// res.body
 
-API TOKEN Authorization required
-* local API search recipes 
-    * http://localhost:8000/api/recipe-by-diet-api-data/keto
-* get recipe details 
-    * http://localhost:8000/api/recipe-details/
-* register user
-    * http://localhost:8000/api/users
-* login user
-    * http://localhost:8000/api/auth/login
-* post recipe
-    * http://localhost:8000/api/recipes
-* post recipe details
-    * http://localhost:8000/api/auth/login
-* delete recipe details
-    * http://localhost:8000/api/recipe-details/3
-* delete recipe
-    * http://localhost:8000/api/recipes/2
-* get recipe
-    * http://localhost:8000/api/recipes
-* get diets by user id
-    * http://localhost:8000/api/recipes/diets-by-user-id/1
-* get recipes by  diet and  by user id
-    * http://localhost:8000/api/recipes/recipes-by-user-id/1
+  {
+
+  }
+
+```
+### GET `api/recipe-details`
+
+```js
+// req.query
+{
+  
+}
+
+// res.body
+[
+  {
+   "id": 71,
+        "recipe_id": 71,
+        "spoonacular_id": 492882,
+        "diet_name": "glutenfree",
+        "recipe_name": "Banana Nut Bread Granola Bars – January #ImprovChallenge (#glutenfree)",
+        "recipe_img": "https://spoonacular.com/recipeImages/492882-556x370.jpg",
+        "recipe_ingredients": "¼ -½ c honey or agave nectar (***See Note)",
+        "nutrition_info": "{\"percentProtein\":10.91,\"percentFat\":42.67,\"percentCarbs\":46.42}",
+        "recipe_equipment": "{\"baking pan\",\"bowl\",\"oven\"}",
+        "recipe_instruction": "Preheat oven to 350°F.Coat an 8×8 in. baking pan with cooking spray.In a large bowl, toss together the oats and flax seed.In a medium bowl, stir together banana, honey, vanilla, cinnamon, nutmeg, and salt until well combined.Pour the liquid mixture over the oats mixture, and stir until evenly coated and the oats are moistened.Stir in the cranberries and walnuts.Press the mixture firmly into the prepared pan.Bake for 30-35 minutes, or until golden brown, and firm.Cool in pan for about 5-10 minutes, cut into bars, and remove from pan to finish cooling completely."
+  }
+]
+```
+### POST `api/recipe-details`
+
+```js
+// req.body
+{
+  "recipe_id": "70",
+  "spoonacular_id": 15955,
+  "diet_name": "dairy free",
+  "recipe_name": "Crown Lamb Rack with Green Herb Couscous",
+  "recipe_img": "https://spoonacular.com/recipeImages/15955-556x370.jpg",
+  "recipe_ingredients": "hey",
+  "nutrition_info": "{ percentProtein: 16.04, percentFat: 70.51, percentCarbs: 13.45 }",
+  "recipe_equipment": "world",
+  "recipe_instruction": "Rinse lamb roast, pat dry, and set on a metal rack in a shallow pan (at least 10 in. square). Mix ground cumin and 1/2 teaspoon each salt and pepper; rub onto roast, inside and out.                                                                                                 Bake lamb in a 450 regular or convection oven until a thermometer inserted horizontally through roast into center of thickest part reads 145 to 150 for rare, 35 to 40 minutes, or 155 for medium-rare, 40 to 45 minutes. If bone tips start to scorch, drape them with foil.                                                                                                 Meanwhile, in a 10- to 12-inch frying pan over medium-high heat, shake pine nuts frequently until lightly browned, about 3 minutes; pour into a small bowl.                                                                                                 To pan, add onion and sausages; stir frequently over high heat, breaking meat into small pieces, until lightly browned, about 10 minutes. Add broth and cover; when boiling, stir in peas and cover. When boiling again, stir in couscous, cover, and remove from heat. Let stand in a warm place 10 to 20 minutes.                                                                                                 As lamb roasts, in a food processor or with a knife, finely chop parsley, mint, and dill (or crumble dried herbs) and mix.                                                                                                 Transfer roast to a platter; keeping it warm, let rest 5 to 10 minutes. Stir herb mixture into hot couscous; fill center of roast with some of the couscous and spoon remainder around the meat. Sprinkle couscous with pine nuts. Cut lamb between ribs and serve chops with couscous. Add more salt and pepper to taste."
+}
+
+// res.body
+[
+   {
+    "id": 81,
+    "recipe_id": 70,
+    "spoonacular_id": 15955,
+    "diet_name": "dairy free",
+    "recipe_name": "Crown Lamb Rack with Green Herb Couscous",
+    "recipe_img": "https://spoonacular.com/recipeImages/15955-556x370.jpg",
+    "recipe_ingredients": "hey",
+    "nutrition_info": "{ percentProtein: 16.04, percentFat: 70.51, percentCarbs: 13.45 }",
+    "recipe_equipment": "world",
+    "recipe_instruction": "Rinse lamb roast, pat dry, and set on a metal rack in a shallow pan (at least 10 in. square). Mix ground cumin and 1/2 teaspoon each salt and pepper; rub onto roast, inside and out.                                                                                                 Bake lamb in a 450 regular or convection oven until a thermometer inserted horizontally through roast into center of thickest part reads 145 to 150 for rare, 35 to 40 minutes, or 155 for medium-rare, 40 to 45 minutes. If bone tips start to scorch, drape them with foil.                                                                                                 Meanwhile, in a 10- to 12-inch frying pan over medium-high heat, shake pine nuts frequently until lightly browned, about 3 minutes; pour into a small bowl.                                                                                                 To pan, add onion and sausages; stir frequently over high heat, breaking meat into small pieces, until lightly browned, about 10 minutes. Add broth and cover; when boiling, stir in peas and cover. When boiling again, stir in couscous, cover, and remove from heat. Let stand in a warm place 10 to 20 minutes.                                                                                                 As lamb roasts, in a food processor or with a knife, finely chop parsley, mint, and dill (or crumble dried herbs) and mix.                                                                                                 Transfer roast to a platter; keeping it warm, let rest 5 to 10 minutes. Stir herb mixture into hot couscous; fill center of roast with some of the couscous and spoon remainder around the meat. Sprinkle couscous with pine nuts. Cut lamb between ribs and serve chops with couscous. Add more salt and pepper to taste."
+}
+]
+```
+
+### DELETE `/api/recipes-details/:id`
+
+```js
+// req.query
+{
+  id: ID
+}
+
+// res.body
+
+  {
+
+  }
+
+```
 
 
 ## Responsive 
@@ -278,7 +385,7 @@ App is built to be usable on mobile devices, as well as responsive across mobile
 ## Development Roadmap 
 This is v1.0 of the app, but future enhancements are expected to include:
 * Weekly calendar - in order to map recipes based on the calendar.
-* Add more specialized diets (dairy free, )
+* Add more specialized diets (dairy free)
 * Add screenshots of the app for explanatory purpose on the dashboard.
 
 ## How to run it 
